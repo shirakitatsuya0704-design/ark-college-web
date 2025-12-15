@@ -1086,10 +1086,18 @@
             padding: 1.5rem 3rem;
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid var(--gold);
-            margin-bottom: 3rem;
             font-size: 1.3rem;
             font-weight: 600;
             color: var(--gold);
+        }
+
+        .action-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
 
         /* Footer */
@@ -1287,6 +1295,16 @@
                 width: 100%;
                 padding: 1rem;
             }
+
+            .action-wrapper {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .availability {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* Scroll animations */
@@ -1356,7 +1374,7 @@
 
             <div class="cta-group">
                 <a href="#contact" class="btn btn-primary">個別コンサルティングに申し込む</a>
-                <a href="#materials" class="btn btn-secondary">資料請求</a>
+                <a href="#materials" class="btn btn-secondary" id="materials">資料請求</a>
             </div>
 
             <p class="cta-note">
@@ -1475,6 +1493,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
+                    個別コンサルティングで詳しく聞く
+                </a>
             </div>
         </div>
     </section>
@@ -1612,6 +1636,12 @@
                         </p>
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
+                    このカリキュラムを体験する
+                </a>
             </div>
         </div>
     </section>
@@ -1805,6 +1835,17 @@
                             ※現在の学力や状況をヒアリングした上で、入塾面談時に具体的なご提案をさせていただきます。<br>
                             ※希望受験校数は、単体プログラムとして追加することもできます
                         </p>
+
+                        <div style="text-align: center; margin-top: 3rem; padding: 2.5rem; background: var(--off-white); border: 2px solid var(--gold);">
+                            <p style="font-size: 1.2rem; color: var(--navy); margin-bottom: 1.5rem; font-weight: 600;">
+                                詳しい料金体系については、<br>
+                                個別コンサルティング時に<br>
+                                あなたの状況に合わせた最適なプランをご提案いたします。
+                            </p>
+                            <a href="#contact" class="btn btn-primary" style="display: inline-block;">
+                                料金を詳しく知る・個別相談に申し込む
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1976,6 +2017,36 @@
         </div>
     </section>
 
+    <!-- Materials Request Section -->
+    <section style="background: var(--off-white); padding: 6rem 0;" id="materials">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div class="section-tag">MATERIALS REQUEST</div>
+                <h2 class="section-title" style="margin-bottom: 2rem;">資料請求</h2>
+                <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 3rem; color: var(--navy);">
+                    Ark Collegeの詳しい資料をお送りします。<br>
+                    カリキュラム詳細、料金体系、合格実績など、<br>
+                    入塾をご検討いただくための情報を網羅しています。<br>
+                    まずはお気軽に資料をご請求ください。
+                </p>
+                
+                <div style="background: var(--white); padding: 3rem; border: 2px solid var(--gold); margin-bottom: 2rem;">
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 2rem;">
+                        以下のフォームからご請求ください
+                    </p>
+                    <a href="https://forms.gle/your-google-form-id" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
+                        資料請求フォームへ
+                    </a>
+                </div>
+
+                <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.7;">
+                    ※資料請求後、2営業日以内にメールにてお送りいたします。<br>
+                    ※資料請求は無料です。お気軽にお申し込みください。
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="final-cta" id="contact">
         <div class="final-cta-content">
@@ -1985,13 +2056,14 @@
                 まずは入塾審査にお申し込みください。
             </p>
             
-            <div class="availability" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
-                2025年度生：残り 3 名
+            <div class="action-wrapper">
+                <div class="availability">
+                    2025年度生：残り 3 名
+                </div>
+                <a href="https://forms.gle/your-application-form-id" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
+                    入塾審査・個別コンサルティングに申し込む
+                </a>
             </div>
-
-            <a href="#" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
-                入塾審査・個別コンサルティングに申し込む
-            </a>
 
             <p style="margin-top: 1.5rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7);">
                 所要時間：約60分 / オンライン実施
@@ -2012,7 +2084,7 @@
             2025年度生募集中
             <span class="sticky-cta-urgency">残り枠数わずか</span>
         </div>
-        <a href="#contact" class="sticky-cta-btn">審査・コンサルに申し込む</a>
+        <a href="#materials" class="sticky-cta-btn">まずは資料を請求する</a>
     </div>
 
     <script>
