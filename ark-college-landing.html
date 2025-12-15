@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ark College - 総合型選抜専門プロフェッショナル・ファーム</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A1628;
+            --navy-light: #1a2942;
+            --navy-lighter: #2a3952;
+            --gold: #D4AF37;
+            --gold-light: #E5C868;
+            --gold-dark: #B8941F;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --gray-light: #E8EBF0;
+            --gray: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--navy);
+            line-height: 1.8;
+            background: var(--white);
+            overflow-x: hidden;
+            word-wrap: break-word;
+            word-break: normal;
+            overflow-wrap: break-word;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-lighter) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tag {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: var(--white);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: 0.03em;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            line-height: 1.9;
+            animation: fadeInUp 1s ease-out 1.1s both;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0 4rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.3s both;
+        }
+
+        .achievement-item {
+            text-align: center;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-value {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.3rem;
+        }
+
+        .achievement-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.05em;
+        }
+
+        .achievement-note {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .cta-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-tag {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        /* Crisis Section */
+        .crisis {
+            background: var(--off-white);
+        }
+
+        .crisis-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .crisis h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+            color: var(--navy);
+            line-height: 1.4;
+        }
+
+        .crisis p {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .crisis-highlight {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 2px;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .crisis-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gold);
+        }
+
+        .crisis-highlight p {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Value Proposition */
+        .value-props {
+            background: var(--white);
+        }
+
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .prop-card {
+            position: relative;
+            padding: 3rem;
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 60px rgba(10, 22, 40, 0.1);
+        }
+
+        .prop-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .prop-title {
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .prop-catch {
+            font-size: 1.1rem;
+            color: var(--gold-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .prop-body {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--navy);
+        }
+
+        .prop-body ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .prop-body li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .prop-body li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Skills Section */
+        .skills {
+            background: var(--off-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .skill-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.08);
+        }
+
+        .skill-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .skill-subtitle {
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--navy);
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            background: var(--white);
+        }
+
+        .curriculum-steps {
+            margin-top: 4rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            align-items: start;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy);
+            font-size: 3rem;
+            font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background: var(--gold);
+        }
+
+        .step:last-child .step-number::after {
+            display: none;
+        }
+
+        .step-content {
+            flex: 1;
+            padding-top: 1rem;
+        }
+
+        .step-title {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .step-subtitle {
+            font-size: 1.1rem;
+            color: var(--gold-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .step-description {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--navy);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--off-white);
+        }
+
+        .pricing-intro {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            position: relative;
+        }
+
+        .pricing-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+        }
+
+        .pricing-intro h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-align: center;
+        }
+
+        .pricing-intro > p {
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .guarantees {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 0;
+        }
+
+        .guarantee-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .guarantee-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--gold);
+        }
+
+        .guarantee-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--gold);
+        }
+
+        .guarantee-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .courses {
+            margin-top: 4rem;
+        }
+
+        .course-section {
+            margin-bottom: 5rem;
+        }
+
+        .course-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 2.5rem 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .course-header h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 3rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .course-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .course-content {
+            padding: 3rem;
+            background: var(--white);
+            border: 2px solid var(--gray-light);
+        }
+
+        .course-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .course-content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            margin-top: 3rem;
+            border-collapse: collapse;
+            background: var(--white);
+        }
+
+        .pricing-table thead {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .pricing-table th {
+            padding: 1.5rem;
+            font-weight: 600;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .pricing-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .pricing-table tr:hover {
+            background: var(--off-white);
+        }
+
+        .pricing-table strong {
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+
+        .pricing-note {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-top: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Selection Process */
+        .selection {
+            background: var(--white);
+        }
+
+        .selection-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .selection-message {
+            background: var(--off-white);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--gold);
+        }
+
+        .selection-message p {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .criteria {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .criteria-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .criteria-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .criteria-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .process-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 2rem;
+            background: var(--off-white);
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .process-step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1.3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .process-step-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Profile Section */
+        .profile {
+            background: var(--off-white);
+        }
+
+        .profile-content {
+            display: flex;
+            gap: 4rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            flex-shrink: 0;
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2) 0%, transparent 70%);
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--gold);
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            color: var(--gold-dark);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .profile-tagline {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            padding-left: 1.5rem;
+            border-left: 4px solid var(--gold);
+        }
+
+        .profile-bio {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--navy);
+        }
+
+        .profile-bio p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            border: 2px solid var(--gray-light);
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--gold);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 2rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--navy);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 900;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+
+        .availability {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--gold);
+            margin-bottom: 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 -5px 20px rgba(10, 22, 40, 0.3);
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--gold);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .sticky-cta-text {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .sticky-cta-urgency {
+            color: var(--gold);
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+
+        .sticky-cta-btn {
+            padding: 0.8rem 2rem;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .sticky-cta-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .props-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-content {
+                flex-direction: column;
+            }
+
+            .profile-image {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .achievements {
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .step {
+                flex-direction: column !important;
+                gap: 2rem;
+            }
+
+            .step-number {
+                margin: 0 auto;
+            }
+
+            .process-flow {
+                flex-direction: column;
+            }
+
+            .process-step::after {
+                content: '↓';
+                right: auto;
+                left: 50%;
+                top: auto;
+                bottom: -2rem;
+                transform: translateX(-50%);
+            }
+
+            .pricing-table {
+                font-size: 0.9rem;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 1rem;
+            }
+
+            .guarantees {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .guarantee-item {
+                padding: 1.2rem 1rem;
+            }
+
+            .guarantee-text {
+                font-size: 0.9rem;
+            }
+
+            .pricing-intro {
+                padding: 2rem 1.5rem;
+            }
+
+            .pricing-intro h3 {
+                font-size: 1.4rem;
+            }
+
+            .sticky-cta {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .sticky-cta-text {
+                font-size: 0.85rem;
+            }
+
+            .sticky-cta-btn {
+                width: 100%;
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABmGSURBVHgB7d0JeFTV+Qfw703IwhZCWMKSsO+gsgVkEVBBQEFAUbEqiktbrda9Vq1LrVr3rbXW2lqrVq22iksFBRQVEBBZBNn3LYEQIBB2ss7/d+YOk8lkJvd95965d5Lv53nOM5PIzL13bu7vnvu7v3POdRAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZGV1ASQjT0S/SxuqPwbFwC/HwD/ceAvjoBfkXyv8hCcLA5fIv5uXQD8Th0AxSXArxLq1gNQ7z8FdRoAqJcCfkPx39VHARTVQwGUlAKonAqg4j9B+O96/xrg1z0FoCQVr0XKePVR83PkdwT/rTT8bwT4DQAEq3CtvBr42Y/C15cApODa2XUT/l0M/kr86/h/V32/Av9f7yS+JuL7FXUB1MuvVS+IiKKXik3JARQhTp4FUJwToLxBABr3A9DyPADNLgfQ7BoATQcBaDQGQMMJABqNBtBgHICGFwFoMBFA/fEANPy3IAWhKSjxQsHJzQPgrwDgPwEgMABAsA+AoisBBG4GUHktgOKrAJRcC8B/M4DSGwH4cO18uK5+3Fe+Av/u7wGQ1xFAbh8AeYMBFA4DUHQ1gKIxAEomACi5DkBwKoDyGQAqpwOomAbAfzOA0lsBBG4F4J8KIOgHgO9vAQC+PwMIrgYQLJoNIDgbQPAG/PuNAIJzAARvAhCYByCwAEBgIYCKRfh3fJ/yxQDKFwMoWw6gYimA8mUAypcDKF8BwLca184x/L2sA+BfCMC/CMBJ/L1sBlCwFsDB5QByV+JaqgFUjQUQmAigfByA8usBlE8AUD4eQGA8gMA1AIKTYY0TuM/8C3D/6X9B6DkC/N7kI/B7UrgZQNkmXKMdAIq2ACjdBqB8F4DAAQCV+wH49wPw58J6bj6sVx+3iVr4tykBdQ2uWRNco4bvQ21cQ18Dq+X/tM+rPAC/H0CZ/wi+x38M18t/Cv89fz+AkhO4dp74qn4V/v9OAyhOBVCUCutn4Pu/Gv/+U/HftQDkyPf4Cv4+Kvz/NoDKTvjvRr0ANOkPoMlQAE1GAGgxDkDL6wC0uwNA6+kAWs/G9+cBaDsP16o9gJbX4vv4b6BefQBN8W8tB+HnppUAlFwG69VNMfD7B3C/D/cIX7ve+N4QAM3HAmg+BkDzVFivZSqA1rjvtRwDoNVYAK0mAWh9LYB2t+J7dwFoNxv3tI6439XD93v1QQC+AbBGCW4XtZn11MuwXl18f1Adq3V3/H/P6wG0uARAmysAtP0ngI5XA2h7F4CO9wPoeA+u3TDcP/vguzfiO7i++D6vh++3xl+vGb5f6gto+1wCX3/cI+oeBJA7Au6I3wL8/gPQZhq+34Hb4En83dYHUDIKQN4EAAdnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfn0I178E/1+Ea5CPf6d6uJ9Wxf+/Ev9/xQUAajsGwPcz/FsC/B7kAyCi+NLQe+rR9PpJf/31k2eua3/lrL85X+/b/8M3ztXdc3nrt78+5H2n9tnDXv/s4aUv/PAns34y5Omr7nnmlql33jt9+sA7fnrFo/dOn77g7pufe/yBWXPvu3/O7Q8/eOdvH3vw1t/MvWfW3/vfN+OJwXf87K9tZv3s16nD7v1d44FTH2s09N5n6ve+75mS5jc+VZR6x7PDHrzrjef+8eS8+U/+ad5fXpj78MPPPf/AI889MffBOc/MfvBXj/565y+enj7joWdvvv+pOwbOe+DGlnPvuLrJ3Fsua/bLmzs0u/PSVg2vG9e03vWTOxZdO7lX0dXX9w1cN2FwxdQJgwJTrx9Yfv2kIUXTJg4rvW7iwNKpEwf6p17btWTahMFls28Yljtr+nV5c/40LnfOK+PyZz854viv/jrm+M+euvLwHa/12nvD6x1zPxr28ZGl3R7z7b/qxaY5Fz+bceiiZ9vnXPzslvYXPftu94ueee+Ci5/5YHnXZxZc/OzbD3S94qm/nN/hsd+1a/u7Z/q1+s0/+jb/+csnNbnxl/ubDP51YfOrnzvR5Nbnfiv29Kb4vN8D/ePx+7+kf/tbffwnqvffhL/fp/D7P5bdb+j+p6N/33A+/j64F30x1TF++gq0vHQ8WhkGjQyDLU5NU9Yb3qz9rPaLWk/Xtde/oP2l5s+0XkwaDMOtev1ZbS7ql3qx1oumP+u+rPGy5tN1/1f3adPfGj+l90Tji7RmNH1G/yndZ5Wf0vxJ/SnaDxtO1HpSd7zm43p/037U8GGDhw2fo/kIrZ/TPVf/Hp3r9X6t+Sv1b1V6lu7M6qfp/VT7B52/1b5Z+xbN7xvOxn3+xO1n6P5s+Jn+lwb3Gr2uO1v3a+Pr9O8z3mH4qc5ftWbpvqL7Wz3/WXkHX/53fX+H2hPqT+Prp3d71nuuXX/s5cN/+Mv49cMfuvqHj9zW/5eP9v/F4/2mvz3gzv8Ou/PnI+74+RUj75hx5ci5t4ye+9NRc28dOfeWy+bc8tOxs28eM/aWKePmzJ00+e5pU+6effNNc25vMWdm5vlzbuq/7zfPXbtq/n1X/eXpZwd99+KIRu0HNGzcu0u9S/r3qz+k98CaCwZdeubiQUMGnJp188Bl//nJ6CX/vu+KN1+dNHHVW+NHffjaQ+P/snDS0D8vvnH439fdO/Qv62++6d5Pr5o+47/Dbv35h6PvuO2jUfdMnz/yzhk/m3vHjOtH3jHj+rl/mnPZrFt+eturj946+tXnf/KThS/M+tniZ276xQdPX3Pr2vl3D/r4qV8N+fSRuy9fedvU/h9OubrHB3Ou6fneDf07vXFL346v/eTKdq89e9MVv3z2xpt++diU6f+acv2dT0y87s4X509I3P1TiYuBkZ1gvXou+EupU6rlRRc37D/ljCHvuR2HvNc44/yOQzo4O4d0bHbhoPaN9w9s16hgQLuSve3P4xsAwP4L6yzaOaDxhztuGfnnLTfe8OiWH934h89/M+6FjXdc/+Ly+XMfXfrMzQ+u+OWP7vnnc3fcMO/nP7npzt/cPG3S9Y9M/8EPJvxwwuQf/CDW4p5/pOSd3jB9xdUdHxg5+a//Gjvl1uejHV/o45+p2rNl+NyGE9v913mj+5y6Kw3ueemJqrWbBu7s//uNk45OnPy65t3O/r+sXTbp9IYJpzY8Ounl9bdeN2/e7Y/OM77w7QfvFb13xy9/8I8fPXbFL8Zc6vws1uOb0KbbQNxDRuEeMhL3kNG4D4/s2WTEN9tGXfNch0E3vdpq6I2vNB104yuNhl733//Z//L65Z/+tNW2X//snY9/fv/KeQ+8d8/yexZ8tOChtW/9fNb6v/3i7nUPPT732cefeGjBY+vv//m0DXdOnbLxvhtv3nzLNf/aOumKuZ+NvfKlj0b94tX3z//Nb//Z/o5X5rS9/dV/NLv9teea3fTa3zuPeuY/HS9/7oO2Fzz7SofBT6+9oNdTG3v2/POWC7o/NTJW49pekzG5T6PZ/Y3Zi/sYs1f2Ml7YnmN8tj7HePV/OcZ/PzlmzF50wli46rDx1uYSI+OzCmP9+gpji2E4xh7DcEr0z/ePMK45fNDY/e0Bo/zoPuPMyj3GN7n7jJO7vzcC+7YbgYN7jK+ydxtl+w4awUN7sQbKcD86aJTs32sc37/fuNC4Sfd848vr5xiNrvr+/5r0n/J04/4//K1h///xWI0+ov64mj0G/qxx75HP1u7x8cJqbd9TH6/b6b0aO7z2kQd/3OLbvpd1brW5c7sjmyJ3/tvlmVtyn1+1u/y5jXvKXvoio+zlz7eVvfzFzrKXv/yq7KWvdpa9VP5V8f9dy6Y/qdf5Woe+d/n+vW35N3uu3Lb7x5t+t/fu5f9c+4eP/vnUql+ufuLT3y/b+tiHu362ZekHL6x/+L25K/64aO0fF655ZM3KhZdvf/zdix/+6w3Dn78icu/9a2t39W3w/sCy9YP+vm7wiz/fMOyJtfNu//dzT9xx+rnHL7/zX89c2eef857q/uj8J3s++uLTnR7879M9Hnnxr10efvGl9rP/+XKr2S+9es6Vz7/V6crn/93m8mdeOPuyZ5Z2HfX0+137zF/Xv+usJ9f2veTRTW/dMGfDn0Y/8fkfrvvD5t//OOrvfnjFY+s5no1Rf4t+r4rXOzNq33nDH1X9uz4I4PcN7jn+03i3KK3vM/5Bif8I/uOr3L7v5cF3Dut3/ZZnhuz/9GcrF/3f0D2fnfOLlYffzvjF58tvW7f8Dwdef+K5w28+9ubR+c+/dWTR8+9tefnlFUtf/M/yl99YnvHSW6tfeufdNS+++95nL77//qbnFrz/1ZMPPLD2n/MXrn/y+f8sfvK5dxf/8blXFy/43Qtr5v3ltcVPPrPk8Weef+ep5//+9osvvv7Rc6+8sXbBP15f+9xrC1e/+I+Fq59ftGj1M//36pon//P82hde+nDti88vW//Ew68efv6JBUef+/vCQ88+tmD/U48s2PvEQ8/vmz9n0e77f/7v3Hvu//feex/Ytvc+/Pvue+bN/9k/5i/47HN/+vPP1v331t/99s3JP/3T63OmzPl//Z986MkBP/ltv+lPPHHuT155Lv3m//y7z9SH/97jqp8sOfem3y65+rbf/+vm2//wjzm3zft0zu3PbrnjsWfm3v742//49YNL5z/4+JLfPPy799+85w9vP/ynN19+ZPGip/+99oUH37j+7uefu+HuZ+dc/bdnp978j/U/H//El8v6P/jl8m4/+GpZ97kvL+v+0OrlnWd+vDz11hUfNb33k48aT/9oxeCfflRvy9B5W4fNXbj1imue3Hr53Ne2XnH1i9uumvXM9vFT/rp93G//sf3cu57Zft49T2eOvuuZ7UOv/c+2QX94bVPP37+yufs/X9rU7bE3N3d9+M1NDe58c/35D76x+bwH39za5sllX3a8/+2vnY/fWrnl9N+s++bJ1dsf+Pvqg0+s2vbI82u+un1h+tb7l+7e88iiHd/cv2gnnl+0rfT+17dl3/fWth23vrP9xMy31x+7fv6G/VfO27Dzyjl/2zb4wX/8b/CD/5j/z35//t/gJ//Zve/BL/cffOzT3IOPLc879OgnOw49+tGuQ49+knnwsSV7D85fsmv/owt25D2ycOuhOS9tPnjn4q/2T1t84OCFCzcc7rNo/dHr3lyfe+WST3Lyl7//dcl//ve/yvf+t3zzf4PbPyrduem1iv3rn63Ie/fpyoL1z5QdXvdS+dF1z5Ucz3hxz36scn//G1pbd//81Ya9f7+l/MCtP28w6LrbG166YGKjlHGXN+l/y0OtR97xm7bj73iq/YSnft9l0p2vdr3l/n93u+XeRd1vuXfhRbfd++klM+56/JKfzH7y8h/Ne/byH/38uSt//ocn+/7iN49d/ov7n5w49f7Hps545Knp0555ava0Z54/f/qcp3vP+MWcXjN+MbfXbQ/O6XV7xu0dZsydds7sZ84fdc+frxpy159nvb3+9Ozs/3zd/Oo/vHbjtqe/PbP4P81OH//zyaN/2lmS+fiuCv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" alt="ARK COLLEGE" class="logo-image">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#value">提供価値</a></li>
+                <li><a href="#curriculum">カリキュラム</a></li>
+                <li><a href="#pricing">コース料金</a></li>
+                <li><a href="#profile">代表プロフィール</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
+            <h1>1学年6名限定。<br>戦略で難関大合格を。</h1>
+            <p class="hero-subtitle">総合型選抜専門・完全オンライン私塾「Ark College」</p>
+            <p class="hero-description">
+                累計50名以上を指導し、進学先確保率100%。<br>
+                第一志望合格率70%超の実績を持つ代表講師が、<br>
+                パーソナライズされたカリキュラムで直接指導。
+            </p>
+            
+            <div class="achievements">
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">100%</div>
+                    <div class="achievement-label">第一志望 一次通過率</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">86.7%</div>
+                    <div class="achievement-label">第一志望 最終合格率</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">📊</div>
+                    <div class="achievement-value">30+</div>
+                    <div class="achievement-label">指導実績人数</div>
+                </div>
+            </div>
+
+            <p class="achievement-note">
+                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
+                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
+            </p>
+
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">個別コンサルティングに申し込む</a>
+                <a href="#materials" class="btn btn-secondary">資料請求</a>
+            </div>
+
+            <p class="cta-note">
+                ※個別コンサルティングには、入塾面談も含まれます<br>
+                ※定員に達し次第、本年度の募集は終了します
+            </p>
+        </div>
+    </section>
+
+    <!-- Crisis Section -->
+    <section class="crisis">
+        <div class="container">
+            <div class="crisis-content animate-on-scroll">
+                <h2>一生を左右する受験戦略は、<br>プロに任せませんか？</h2>
+                
+                <p>
+                    総合型選抜は、単なる「作文コンクール」ではありません。<br>
+                    大学のアドミッション・ポリシーを読み解き、<br>
+                    あなたのポテンシャルと合致させる高度なマッチング戦略が必要です。
+                </p>
+                
+                <p>
+                    しかし、多くの大手塾では画一的なカリキュラムや、<br>
+                    自身が合格しただけの大学生講師による指導が一般的です。
+                </p>
+
+                <div class="crisis-highlight">
+                    <p>
+                        アーク・カレッジは違います。<br>
+                        ここは、<strong>「どうしても合格したい」と願うご家庭のための、<br>プロフェッショナル・ファーム</strong>です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-props" id="value">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">WHY ARK COLLEGE</div>
+                <h2 class="section-title">総合型選抜"プロフェッショナル・ファーム"<br>アーク・カレッジが選ばれる4つの理由</h2>
+            </div>
+
+            <div class="props-grid">
+                <div class="prop-card animate-on-scroll">
+                    <div class="prop-number">REASON 01</div>
+                    <h3 class="prop-title">100%合格へと導く<br>「受験戦略コンサルティング」</h3>
+                    <p class="prop-catch">生徒のポテンシャル × 志望校特性</p>
+                    <div class="prop-body">
+                        <p>
+                            累計50名以上の指導において、<strong>進学先確保率100%</strong>を継続中。<br>
+                            さらに、第一志望合格率は70%超。<br>
+                            これは偶然ではなく、個々の特性を最大化する「戦略」があるからです。
+                        </p>
+                        <p>
+                            「合格可能性を極限まで高める併願戦略」と<br>
+                            「評価されるストーリー設計」をプロが立案します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="prop-card animate-on-scroll">
+                    <div class="prop-number">REASON 02</div>
+                    <h3 class="prop-title">31校・50名以上の実績に基づく<br>「完全個別カリキュラム」</h3>
+                    <p class="prop-catch">バイト講師ゼロ。<br>代表講師があなただけの最適解を設計。</p>
+                    <div class="prop-body">
+                        <p>
+                            これまでに<strong>計31大学・50名以上</strong>を合格へ導いた代表講師が、<br>
+                            全工程をマンツーマンで伴走します。
+                        </p>
+                        <p>
+                            大手塾のような「画一的なテキスト」は存在しません。<br>
+                            あなたの志望校、現在の能力、性格に合わせて、<br>
+                            <strong>完全オーダーメイドのカリキュラム</strong>を提案。
+                        </p>
+                        <p>
+                            一般選抜とは違い、評価基準が千差万別な総合型選抜。<br>
+                            戦略で合否が決まる総合型選抜において、<br>
+                            経験豊富なトッププロが直接担当する安心感を提供します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="prop-card animate-on-scroll">
+                    <div class="prop-number">REASON 03</div>
+                    <h3 class="prop-title">添削・相談無制限。<br>「いつでも相談できる」安心感</h3>
+                    <p class="prop-catch">悩みを翌週に持ち越さない。<br>24時間365日、あなたの味方です。</p>
+                    <div class="prop-body">
+                        <p>
+                            「添削回数」も「チャット相談」も無制限。<br>
+                            <strong>納得いくまで何度でも書き直し、<br>疑問があればすぐに解消できます。</strong>
+                        </p>
+                        <p>
+                            原則48時間以内に返信。<br>
+                            深夜でも早朝でも、私たちはあなたの不安を受け止めます。
+                        </p>
+                        <p>
+                            また、<strong>「定期的な三者面談」</strong>を実施。<br>
+                            保護者様とも密に連携し、<br>
+                            家庭でのサポート体制まで含めてチームで合格を目指します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="prop-card animate-on-scroll">
+                    <div class="prop-number">REASON 04</div>
+                    <h3 class="prop-title">受験を超えて一生使える<br>「6つのソフトスキル」養成</h3>
+                    <p class="prop-catch">大学合格はゴールではない。<br>社会で活躍するための「知性」を育む。</p>
+                    <div class="prop-body">
+                        <p>
+                            Ark Collegeの指導は、小手先の受験テクニックではありません。<br>
+                            厳しい対話と指導を通じて、大学入学後、<br>
+                            そして社会人となってからも一生涯武器となる<br>
+                            <strong>「本質的な能力」</strong>をインストールします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">LIFELONG SKILLS</div>
+                <h2 class="section-title">一生涯の武器となる、6つのソフトスキル</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">1</div>
+                    <h4 class="skill-title">論理的思考力</h4>
+                    <p class="skill-subtitle">【本質的な課題解決力】</p>
+                    <p class="skill-description">
+                        複雑な情報や問題に対し、感情論ではなく、「なぜそうなるのか」という因果関係を明確にし、筋道を立てて考える力です。レポート作成、議論、仕事でのトラブルシューティングなど、あらゆる場面で最も合理的で説得力のある結論を導き出す土台となります。
+                    </p>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">2</div>
+                    <h4 class="skill-title">調査・情報収集力</h4>
+                    <p class="skill-subtitle">【信頼性の高い意思決定力】</p>
+                    <p class="skill-description">
+                        必要な情報を効率的に探し出すだけでなく、その情報源が信頼できるものか、偏りはないかを評価する力です。大学の研究活動はもちろん、仕事での市場分析や新規事業の企画、日常生活での重要な決断（例：住宅購入、投資）など、正確な情報に基づいた判断を可能にします。
+                    </p>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">3</div>
+                    <h4 class="skill-title">文章構成力・表現力</h4>
+                    <p class="skill-subtitle">【説得と伝達のプロフェッショナル】</p>
+                    <p class="skill-description">
+                        自分の考えや主張を、結論から逆算した論理的な構成で、読み手を納得させる文章に落とし込む力です。学術論文からビジネスの企画書、公的な文書まで、読み手を動かし、目的を達成するための強力なツールとなります。
+                    </p>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">4</div>
+                    <h4 class="skill-title">自己分析力・メタ認知能力</h4>
+                    <p class="skill-subtitle">【自己理解と適応力】</p>
+                    <p class="skill-description">
+                        「自分は何に価値を置き、なぜこの行動をとったのか」を客観的に把握する力です。大学での専攻選びやキャリア形成において、主体的な選択を可能にします。また、困難に直面した際に自分の弱点や思考の癖を理解し、感情をコントロールしながら柔軟に対応するために不可欠です。
+                    </p>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">5</div>
+                    <h4 class="skill-title">目標設定・自己管理能力</h4>
+                    <p class="skill-subtitle">【自律的なプロジェクト遂行力】</p>
+                    <p class="skill-description">
+                        大きな目標を達成するために、タスクを細分化し、スケジュールを引き、進捗をチェックしながら実行しきる力です。大学の単位取得から、仕事での大規模プロジェクトの管理、個人の健康管理に至るまで、限られた資源（時間、体力など）を最大限に活用して成果を出す能力です。
+                    </p>
+                </div>
+
+                <div class="skill-card animate-on-scroll">
+                    <div class="skill-number">6</div>
+                    <h4 class="skill-title">プレゼンテーション能力</h4>
+                    <p class="skill-subtitle">【効果的な発信力と影響力】</p>
+                    <p class="skill-description">
+                        自分のアイデアや専門的な内容を、聴衆（聞き手）のレベルに合わせて分かりやすく整理し、簡潔かつ魅力的に伝える力です。授業での発表、会議での提案、顧客への説明など、他者の共感や賛同を得て、行動を促すために不可欠なコミュニケーション能力です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">METHODOLOGY</div>
+                <h2 class="section-title">「若き研究者」を育てる、Arkメソッド</h2>
+            </div>
+
+            <div class="curriculum-steps">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title">自己分析と戦略策定</h3>
+                        <p class="step-subtitle">核の発見</p>
+                        <p class="step-description">
+                            あなたの価値観、経験、興味関心を徹底的に掘り下げ、<br>
+                            「あなたにしか語れない物語」を見つけ出します。<br>
+                            同時に、志望校のアドミッション・ポリシーを分析し、<br>
+                            最適なマッチング戦略を立案します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title">探究活動・実績構築</h3>
+                        <p class="step-subtitle">リサーチ・プロジェクトマネジメント</p>
+                        <p class="step-description">
+                            大学レベルの探究活動を設計し、実行をサポート。<br>
+                            文献調査からフィールドワーク、データ分析まで、<br>
+                            本格的な研究プロセスを経験します。<br>
+                            この過程で、調査力・論理的思考力・<br>
+                            プロジェクト管理能力が自然と身につきます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title">書類作成</h3>
+                        <p class="step-subtitle">合格リバース・エンジニアリング</p>
+                        <p class="step-description">
+                            志望理由書、活動報告書、小論文など、<br>
+                            すべての提出書類を「合格」から逆算して設計。<br>
+                            何度でも添削を重ね、<br>
+                            大学が求める人材像と完璧に一致した書類を作り上げます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step animate-on-scroll">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3 class="step-title">二次試験対策</h3>
+                        <p class="step-subtitle">ソクラテス・メソッドによる対話訓練</p>
+                        <p class="step-description">
+                            面接や口頭試問では、<br>
+                            「なぜ？」を徹底的に問い続けるソクラテス・メソッドで<br>
+                            思考の深さを鍛えます。<br>
+                            予想される質問への準備だけでなく、<br>
+                            どんな質問にも論理的に応答できる<br>
+                            「真の対話力」を養成します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">COURSES & PRICING</div>
+                <h2 class="section-title">コース・料金体系</h2>
+            </div>
+
+            <div class="pricing-intro animate-on-scroll">
+                <h3>全てのコースに、最高水準のサポートを標準装備しています。</h3>
+                <p>
+                    Ark Collegeでは、コースによって「手厚さ」を変えることはありません。志望校の数と難易度に応じたパッケージのみをご用意しています。
+                </p>
+
+                <div class="guarantees">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
+                        <div class="guarantee-text">受験戦略<br>コンサルティング</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
+                        <div class="guarantee-text">添削回数<br>無制限</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
+                        <div class="guarantee-text">いつでも相談可<br>48時間以内返信</div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
+                        <div class="guarantee-text">定期的な<br>三者面談</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="courses">
+                <div class="course-section animate-on-scroll">
+                    <div class="course-header">
+                        <h3>【高2生】早期エリート育成コース（月額制）</h3>
+                        <p>高3進級時点で「合格レベル」の基礎（探究・論文力）を完成させる。</p>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <div class="meta-label">対象期間</div>
+                                <div class="meta-value">高校1年4月〜高校2年3月</div>
+                            </div>
+                            <div class="course-meta-item">
+                                <div class="meta-label">指導頻度</div>
+                                <div class="meta-value">月4回 × 50分</div>
+                            </div>
+                            <div class="course-meta-item">
+                                <div class="meta-label">形式</div>
+                                <div class="meta-value">完全オンライン・マンツーマン</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h4>コース概要</h4>
+                        <p>
+                            難関大合格を目指す意欲ある高2生のための、戦略的な早期育成プログラムです。<br>
+                            高3になってから慌てて準備を始めるのではなく、<br>
+                            余裕を持って「合格の土台」を築きます。
+                        </p>
+                        
+                        <h4 style="margin-top: 2rem;">指導内容</h4>
+                        <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">◆</span>
+                                <strong>探究活動マネジメント：</strong>自分の興味関心を深堀りし、<br>大学で研究したいテーマを見つけ、実際の探究活動をスタート
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">◆</span>
+                                <strong>志望校選定の戦略会議：</strong>早期から志望校を絞り込み、<br>合格に必要な要素を逆算して準備
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">◆</span>
+                                <strong>アカデミック・スキル基礎：</strong>論文の読み方・書き方、<br>プレゼンテーション、批判的思考力を養成
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">◆</span>
+                                <strong>評定平均対策：</strong>定期試験対策や学校の課題管理もサポートし、<br>総合型選抜に必要な評定平均を確保
+                            </li>
+                            <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--gold); font-weight: 700;">◆</span>
+                                <strong>社会課題ディスカッション：</strong>時事問題や社会課題について対話し、<br>知的好奇心と思考力を鍛える
+                            </li>
+                        </ul>
+
+                        <p style="margin-top: 2rem; padding: 1.5rem; background: var(--off-white); border-left: 4px solid var(--gold);">
+                            <strong>こんな方におすすめ：</strong><br>
+                            高3になってからでは間に合わない難関大を志望している方、<br>
+                            早期から戦略的に準備を進めたい意欲的な方、<br>
+                            学校の勉強と並行して本格的な探究活動に取り組みたい方
+                        </p>
+                    </div>
+                </div>
+
+                <div class="course-section animate-on-scroll">
+                    <div class="course-header">
+                        <h3>【高3生】合格完遂コース（パッケージ制）</h3>
+                        <p>圧倒的な一次通過率と戦略的併願で、確実に合格を獲りに行く。</p>
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <div class="meta-label">対象期間</div>
+                                <div class="meta-value">高校3年4月〜12月（結果出次第終了）</div>
+                            </div>
+                            <div class="course-meta-item">
+                                <div class="meta-label">指導頻度</div>
+                                <div class="meta-value">月4回 × 50分（出願スケジュールによって調整）</div>
+                            </div>
+                            <div class="course-meta-item">
+                                <div class="meta-label">形式</div>
+                                <div class="meta-value">完全オンライン・マンツーマン</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-content">
+                        <h4>コース詳細</h4>
+                        <p style="margin-bottom: 2rem;">
+                            出願スケジュールに合わせて柔軟に対応。<br>
+                            あなたの現状と志望校に最適化された完全オーダーメイドのサポートを提供します。
+                        </p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                            <div style="background: var(--off-white); padding: 2rem; border-top: 4px solid var(--gold);">
+                                <h5 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem; font-weight: 700;">単願完遂コース</h5>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">志望校ライン</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600; color: var(--navy);">希望による</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">パッケージ</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600; color: var(--gold-dark);">第一志望 1校<br>（計1校 or 1学部）</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">こんな方に</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7;">「どうしてもここに行きたい」という希望があり、<br>一般との併願も検討されている方</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">カリキュラム</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7; font-weight: 600;">1校に特化した<br>一点突破型の対策</div>
+                                </div>
+                            </div>
+
+                            <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 2rem; border-top: 4px solid var(--gold); color: var(--white); position: relative;">
+                                <div style="position: absolute; top: 1rem; right: 1rem; background: var(--gold); color: var(--navy); padding: 0.3rem 1rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;">人気</div>
+                                <h5 style="font-size: 1.4rem; color: var(--gold); margin-bottom: 1rem; font-weight: 700;">難関大コース</h5>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.3rem;">志望校ライン</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600;">GMARCH、関関同立　等</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.3rem;">パッケージ</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600; color: var(--gold-light);">第一志望 ＋ 併願校<br>（計3校 or 3学部）</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.3rem;">こんな方に</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7;">すでに一定の実績・スコアがあり、<br>「合格の確実性」を最大化したい方</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.3rem;">カリキュラム</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7; font-weight: 600;">30校以上のデータ活用による<br>効率的な併願戦略</div>
+                                </div>
+                            </div>
+
+                            <div style="background: var(--off-white); padding: 2rem; border-top: 4px solid var(--gold);">
+                                <h5 style="font-size: 1.4rem; color: var(--navy); margin-bottom: 1rem; font-weight: 700;">最難関大コース</h5>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">志望校ライン</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600; color: var(--navy);">国公立、早慶上智ICU　等</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">パッケージ</div>
+                                    <div style="font-size: 1.05rem; font-weight: 600; color: var(--gold-dark);">第一志望 ＋ 併願校<br>（計3校 or 3学部まで）</div>
+                                </div>
+                                <div style="margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">こんな方に</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7;">ゼロからの活動実績作りや、<br>特殊な二次対策が必要な方</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 0.3rem;">カリキュラム</div>
+                                    <div style="font-size: 0.95rem; line-height: 1.7; font-weight: 600;">高度な論文指導・活動構築を含む<br>フルスペック指導</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="pricing-note">
+                            ※対象期間・志望校ラインはあくまで目安です。<br>
+                            ※現在の学力や状況をヒアリングした上で、入塾面談時に具体的なご提案をさせていただきます。<br>
+                            ※希望受験校数は、単体プログラムとして追加することもできます
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selection Process -->
+    <section class="selection">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">ADMISSION PROCESS</div>
+                <h2 class="section-title">入塾審査について</h2>
+            </div>
+
+            <div class="selection-content">
+                <div class="selection-message animate-on-scroll">
+                    <p>
+                        <strong>「責任を持てる人数」しか、お引き受けしません。</strong><br>
+                        品質保持のため、入塾審査を実施しています。
+                    </p>
+                    <p>
+                        私たちは「お金を払えば誰でも入れる塾」ではありません。徹底的な個別最適化指導を行うため、1学年6名が限界です。以下の基準を満たす方のみ、入塾（契約）のご案内をさせていただきます。
+                    </p>
+                </div>
+
+                <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--navy); text-align: center;">審査基準</h3>
+
+                <div class="criteria animate-on-scroll">
+                    <div class="criteria-item">
+                        <div class="criteria-number">1</div>
+                        <div class="criteria-text">思考力</div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-number">2</div>
+                        <div class="criteria-text">これまでの努力</div>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="criteria-number">3</div>
+                        <div class="criteria-text">厳しい指導の中でも合格を掴み取る覚悟</div>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 2rem; margin: 4rem 0 2rem; color: var(--navy); text-align: center;">入塾までの流れ</h3>
+
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <div class="process-step-text">個別コンサルティングを予約する</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <div class="process-step-text">個別コンサルティング内での審査</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <div class="process-step-text">合否連絡・入塾手続き</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile" id="profile">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">INSTRUCTOR</div>
+                <h2 class="section-title">代表プロフィール</h2>
+            </div>
+
+            <div class="profile-content animate-on-scroll">
+                <div class="profile-image">
+                    <div class="profile-placeholder">👤</div>
+                </div>
+                <div class="profile-info">
+                    <h3 class="profile-name">Noah M.</h3>
+                    <p class="profile-title">Ark College 代表講師 / 受験戦略コンサルタント</p>
+                    
+                    <p class="profile-tagline">難関大合格実績を多数持つ、<br>総合型選抜指導のエキスパート</p>
+                    
+                    <div class="profile-bio">
+                        <p>
+                            慶應義塾大学法学部法律学科を卒業。<br>
+                            その後、会社勤務を経て欧州の大学院へ留学。
+                        </p>
+                        <p>
+                            慶應義塾大学法学部FIT入試A・B両方式で<br>
+                            現役ダブル合格した経験をもとに、<br>
+                            総合型選抜の指導分野に参画。<br>
+                            大手総合型選抜塾「洋々」では4年間にわたり<br>
+                            メンター講師として在籍し、<br>
+                            多数の難関大学合格者を輩出。<br>
+                            また、新規総合型選抜塾の立ち上げにおいては<br>
+                            事業責任者を務め、<br>
+                            指導ノウハウの体系化と組織運営を統括した。
+                        </p>
+                        <p>
+                            さらに、大手外資系企業でマーケターとして勤務。<br>
+                            市場分析、戦略立案、<br>
+                            高い論理的思考力を実務を通じて培う。
+                        </p>
+                        <p>
+                            合格実績と実務経験に基づき、<br>
+                            受験生に対して「合格」と「社会で通用する能力」を<br>
+                            両立させる最高水準の総合型選抜指導を提供する。
+                        </p>
+                        <p>
+                            これまでに31大学・50名以上の生徒を担当し、<br>
+                            合格実績は国公立から早慶上智ICU、<br>
+                            関関同立など多岐にわたる。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">FREQUENTLY ASKED QUESTIONS</div>
+                <h2 class="section-title">よくある質問</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Q. 地方・海外からでも受講できますか？
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        はい、可能です。<br>
+                        Ark Collegeは完全オンラインで指導を行っておりますので、<br>
+                        日本全国どこからでも、また海外からでも受講いただけます。<br>
+                        ZoomやGoogle Meetなどのビデオ通話ツールを使用し、<br>
+                        対面と変わらない質の高い指導を提供します。
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Q. 親のサポートは必要ですか？
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        定期的な三者面談を通じて保護者様とも連携を図りますが、<br>
+                        日々の指導は基本的に生徒本人と代表講師で完結します。<br>
+                        保護者様には、お子様の成長を見守り、<br>
+                        必要に応じてサポートいただく形となります。
+                    </div>
+                </div>
+
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Q. まだ志望校が決まっていませんが大丈夫ですか？
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        全く問題ございません。<br>
+                        むしろ、志望校選びこそプロのコンサルティングが<br>
+                        最も価値を発揮する場面です。<br>
+                        個別コンサルティングの中で、<br>
+                        あなたの興味関心、価値観、将来のビジョンを丁寧にヒアリングし、<br>
+                        最適な志望校をご提案いたします。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="contact">
+        <div class="final-cta-content">
+            <h2>あなたの「本気」に、<br>プロとして「結果」で応えます。</h2>
+            <p>
+                残席わずか。<br>
+                まずは入塾審査にお申し込みください。
+            </p>
+            
+            <div class="availability">
+                2025年度生：残り 3 名
+            </div>
+
+            <a href="#" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
+                入塾審査・個別コンサルティングに申し込む
+            </a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.7);">
+                所要時間：約60分 / オンライン実施
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p style="margin: 0;">&copy; 2025 Ark College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta">
+        <div class="sticky-cta-text">
+            2025年度生募集中
+            <span class="sticky-cta-urgency">残り枠数わずか</span>
+        </div>
+        <a href="#contact" class="sticky-cta-btn">審査・コンサルに申し込む</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+                
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.textContent = answer.style.display === 'block' ? '−' : '+';
+            });
+        });
+
+        // Hide all answers initially
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 22, 40, 0.98)';
+            } else {
+                nav.style.background = 'rgba(10, 22, 40, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
