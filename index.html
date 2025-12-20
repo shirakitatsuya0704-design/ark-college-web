@@ -38,30 +38,27 @@
             overflow-wrap: break-word;
         }
 
-        /* スマホ表示時のbrタグ無効化 */
-        @media (max-width: 768px) {
-            br {
-                display: none !important;
-            }
-            
-            .pc-br {
-                display: none !important;
-            }
+        /* 文節のまとまりを作る（画面幅が足りない時だけ改行される） */
+        .ib {
+            display: inline-block;
         }
 
-        /* PC only line break */
+        /* PCのみで改行 */
         .pc-br {
             display: inline;
         }
 
+        /* スマホのみで改行 */
+        .sp-br {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            /* スマホ表示時: すべてのbrタグを非表示 */
-            br {
-                display: none !important;
-            }
-            
             .pc-br {
-                display: none !important;
+                display: none;
+            }
+            .sp-br {
+                display: block;
             }
         }
 
@@ -1330,30 +1327,7 @@
                 font-size: 0.95rem;
             }
         }
-        /* 既存の @media (max-width: 768px) { br { display: none... } } は削除またはコメントアウト推奨 */
-        
-        /* 文節改行用のクラス */
-        .ib {
-            display: inline-block;
-        }
-        
-        /* PCのみ改行 */
-        .pc-br {
-            display: inline;
-        }
-        /* スマホのみ改行 */
-        .sp-br {
-            display: none;
-        }
-        
-        /* @media (max-width: 768px) {
-            .pc-br {
-                display: none;
-            }
-            .sp-br {
-                display: block;
-            }
-        }*/
+
         @media (max-width: 768px) {
             /* 改行の最適化：スマホではbrタグを無効化 */
             br {
@@ -1798,31 +1772,55 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero-content">
-    <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
-    
-    <h1>
-        <span class="ib">1学年6名限定。</span><br class="pc-br">
-        <span class="ib">戦略で難関大合格を。</span>
-    </h1>
-    
-    <p class="hero-subtitle">
-        <span class="ib">総合型選抜専門・</span><span class="ib">完全オンライン私塾</span><br class="sp-br">
-        <span class="ib">「Ark College」</span>
-    </p>
-    
-    <p class="hero-description">
-        累計50名以上を指導し、<span class="ib">進学先確保率100%。</span>
-        <br class="pc-br">第一志望合格率70%超の実績を持つ代表講師が、<br class="pc-br">
-        <span class="ib">パーソナライズされたカリキュラムで</span><span class="ib">直接指導。</span>
-    </p>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
+            <h1><span class="ib">1学年6名限定。</span><br class="pc-br"><span class="ib">戦略で難関大合格を。</span></h1>
+            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン私塾</span><span class="ib">「Ark College」</span></p>
+            <p class="hero-description">
+                <span class="ib">累計50名以上を指導し、</span><span class="ib">進学先確保率100%。</span><span class="ib">第一志望合格率70%超の実績を持つ</span><span class="ib">代表講師が、</span><span class="ib">パーソナライズされた</span><span class="ib">カリキュラムで直接指導。</span>
+            </p>
+            
+            <div class="achievements">
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">100%</div>
+                    <div class="achievement-label">第一志望 一次通過率</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-value">86.7%</div>
+                    <div class="achievement-label">第一志望 最終合格率</div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon">📊</div>
+                    <div class="achievement-value">30+</div>
+                    <div class="achievement-label">指導実績人数</div>
+                </div>
+            </div>
+
+            <p class="achievement-note">
+                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
+                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
+            </p>
+
+            <div class="cta-group">
+                <a href="#contact" class="btn btn-primary">個別コンサルティングに申し込む</a>
+                <a href="#materials" class="btn btn-secondary" id="materials">資料請求</a>
+            </div>
+
+            <p class="cta-note">
+                ※個別コンサルティングには、入塾面談も含まれます<br>
+                ※定員に達し次第、本年度の募集は終了します
+            </p>
+        </div>
+    </section>
 
     <!-- Crisis Section -->
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
-                <h2>一生を左右する受験戦略は、<br>プロに任せませんか？</h2>
+                <h2><span class="ib">一生を左右する受験戦略は、</span><br><span class="ib">プロに任せませんか？</span></h2>
                 
                 <p>
                     総合型選抜は、単なる「作文コンクール」ではありません。<br>
@@ -2008,7 +2006,7 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">METHODOLOGY</div>
-                <h2 class="section-title">「若き研究者」を育てる、<br>Arkメソッド</h2>
+                <h2 class="section-title"><span class="ib">「若き研究者」を育てる、</span><br><span class="ib">Arkメソッド</span></h2>
             </div>
 
             <div class="curriculum-steps">
