@@ -1330,7 +1330,30 @@
                 font-size: 0.95rem;
             }
         }
-
+        /* 既存の @media (max-width: 768px) { br { display: none... } } は削除またはコメントアウト推奨 */
+        
+        /* 文節改行用のクラス */
+        .ib {
+            display: inline-block;
+        }
+        
+        /* PCのみ改行 */
+        .pc-br {
+            display: inline;
+        }
+        /* スマホのみ改行 */
+        .sp-br {
+            display: none;
+        }
+        
+        /* @media (max-width: 768px) {
+            .pc-br {
+                display: none;
+            }
+            .sp-br {
+                display: block;
+            }
+        }*/
         @media (max-width: 768px) {
             /* 改行の最適化：スマホではbrタグを無効化 */
             br {
@@ -1775,49 +1798,25 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
-            <h1>1学年6名限定。<span class="pc-br"><br></span>戦略で難関大合格を。</h1>
-            <p class="hero-subtitle">総合型選抜専門・完全オンライン私塾「Ark College」</p>
-            <p class="hero-description">
-                累計50名以上を指導し、進学先確保率100%。第一志望合格率70%超の実績を持つ代表講師が、パーソナライズされたカリキュラムで直接指導。
-            </p>
-            
-            <div class="achievements">
-                <div class="achievement-item">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">100%</div>
-                    <div class="achievement-label">第一志望 一次通過率</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">86.7%</div>
-                    <div class="achievement-label">第一志望 最終合格率</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">📊</div>
-                    <div class="achievement-value">30+</div>
-                    <div class="achievement-label">指導実績人数</div>
-                </div>
-            </div>
-
-            <p class="achievement-note">
-                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
-                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
-            </p>
-
-            <div class="cta-group">
-                <a href="#contact" class="btn btn-primary">個別コンサルティングに申し込む</a>
-                <a href="#materials" class="btn btn-secondary" id="materials">資料請求</a>
-            </div>
-
-            <p class="cta-note">
-                ※個別コンサルティングには、入塾面談も含まれます<br>
-                ※定員に達し次第、本年度の募集は終了します
-            </p>
-        </div>
-    </section>
+    <div class="hero-content">
+    <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
+    
+    <h1>
+        <span class="ib">1学年6名限定。</span><br class="pc-br">
+        <span class="ib">戦略で難関大合格を。</span>
+    </h1>
+    
+    <p class="hero-subtitle">
+        <span class="ib">総合型選抜専門・</span><span class="ib">完全オンライン私塾</span><br class="sp-br">
+        <span class="ib">「Ark College」</span>
+    </p>
+    
+    <p class="hero-description">
+        累計50名以上を指導し、<span class="ib">進学先確保率100%。</span>
+        <br class="pc-br">第一志望合格率70%超の実績を持つ代表講師が、<br class="pc-br">
+        <span class="ib">パーソナライズされたカリキュラムで</span><span class="ib">直接指導。</span>
+    </p>
+    </div>
 
     <!-- Crisis Section -->
     <section class="crisis">
