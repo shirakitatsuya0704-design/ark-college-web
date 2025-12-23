@@ -321,7 +321,6 @@
         .crisis { background: var(--off-white); }
         .crisis-content { max-width: 900px; margin: 0 auto; text-align: center; }
         
-        /* 修正: フォントサイズ縮小 */
         .crisis h2 { 
             font-size: 1.6rem; 
             margin-bottom: 1.6rem; 
@@ -329,13 +328,12 @@
             line-height: 1.5; 
         }
         
-        /* 修正: テキスト左揃え */
         .crisis p { 
             font-size: 1.15rem; 
             line-height: 2; 
             color: var(--navy); 
             margin-bottom: 2rem;
-            text-align: left; /* 左揃えに変更 [cite: 30] */
+            text-align: left;
         }
         
         .crisis-highlight {
@@ -350,10 +348,9 @@
         .crisis-highlight::before {
             content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--gold);
         }
-        /* 修正: 文字サイズ縮小・左揃え [cite: 39] */
         .crisis-highlight p {
             color: var(--white); 
-            font-size: 1rem; /* 縮小 */
+            font-size: 1rem;
             font-weight: 500; 
             margin: 0;
             text-align: left;
@@ -373,7 +370,7 @@
         .props-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem; /* 修正: 余白を縮小 (4rem -> 2rem)  */
+            gap: 2rem;
             margin-top: 4rem;
         }
         .prop-card {
@@ -414,12 +411,12 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem; /* 修正: 余白を縮小 (2.5rem -> 1.5rem)  */
+            gap: 1.5rem;
             margin-top: 4rem;
         }
         .skill-card {
             background: var(--white);
-            padding: 2rem; /* 修正: パディング調整 */
+            padding: 2rem;
             border-left: 4px solid var(--gold);
             transition: all 0.3s ease;
         }
@@ -435,7 +432,7 @@
             font-size: 1.2rem;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1rem; /* 修正: 余白縮小 */
+            margin-bottom: 1rem;
         }
         .skill-title { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
         .skill-subtitle { font-size: 0.9rem; color: var(--gold-dark); margin-bottom: 0.8rem; font-weight: 600; }
@@ -620,6 +617,7 @@
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             display: flex; align-items: center; justify-content: center;
             font-size: 4rem; color: #fff;
+            overflow: hidden;
         }
         .profile-info { flex: 1; }
         .profile-name { font-size: 2.5rem; font-weight: 900; margin-bottom: 0.5rem; }
@@ -811,9 +809,9 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-tag">総合型選抜専門</div>
+            <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
             <h1><span class="ib">1学年6名限定。</span><br class="pc-br"><span class="ib">戦略で難関大合格を。</span></h1>
-            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン</span><span class="ib">「Ark College」</span></p>
+            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン私塾</span><span class="ib">「Ark College」</span></p>
             <p class="hero-description">
                 <span class="ib">累計50名以上を指導し、</span><span class="ib">進学先確保率100%。</span><span class="ib">第一志望合格率70%超の実績を持つ</span><span class="ib">代表講師が、</span><span class="ib">パーソナライズされた</span><span class="ib">カリキュラムで直接指導。</span>
             </p>
@@ -837,18 +835,18 @@
             </div>
 
             <div class="cta-group">
-                <a href="#contact" class="btn btn-primary">個別コンサルティングに申し込む<br><span style="font-size:0.8em; font-weight:normal;">(所要時間：約30分)</span></a>
-                <a href="#materials" class="btn btn-secondary" id="materials">資料請求</a>
+                <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" class="btn btn-primary" target="_blank">個別コンサルティングに申し込む<br><span style="font-size:0.8em; font-weight:normal;">(所要時間：約30分)</span></a>
+                <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" class="btn btn-secondary" id="materials" target="_blank">資料請求</a>
             </div>
+
+            <p class="achievement-note">
+                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
+                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
+            </p>
 
             <p class="cta-note">
                 ※個別コンサルティングには、入塾面談も含まれます<br>
                 ※定員に達し次第、本年度の募集は終了します
-            </p>
-    
-            <p class="achievement-note">
-                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
-                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
             </p>
         </div>
     </section>
@@ -856,7 +854,7 @@
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
-                <h2>人生を決める受験戦略は、<br>プロに任せませんか？</h2>
+                <h2>一生を左右する受験戦略は、<br>プロに任せませんか？</h2>
                 
                 <p>
                     総合型選抜は、単なる「作文コンクール」ではありません。<br class="pc-br">
@@ -979,8 +977,8 @@
             </div>
 
             <div style="text-align: center; margin-top: 4rem;">
-                <a href="#contact" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
-                    個別コンサルティングで<br>詳しく聞く
+                <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
+                    個別コンサルティングで詳しく聞く
                 </a>
             </div>
         </div>
@@ -990,8 +988,8 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">LIFELONG SKILLS</div>
-                <h2 class="section-title">一生涯の武器となる、<br>6つのソフトスキル</h2>
-                <p class="section-description">Ark Collegeの総合型選抜対策で培う、<br>実社会でも通用する能力</p>
+                <h2 class="section-title">一生涯の武器となる、6つのソフトスキル</h2>
+                <p class="section-description">Ark Collegeの総合型選抜対策で培う、実社会でも通用する能力</p>
             </div>
 
             <div class="skills-grid">
@@ -1080,7 +1078,7 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">METHODOLOGY</div>
-                <h2 class="section-title">「道を拓く人材」を育てる<br>Ark式メソッド</h2>
+                <h2 class="section-title">「道を開拓していくことができる人材」を育てる。<br>Ark式メソッド</h2>
             </div>
 
             <div class="curriculum-steps">
@@ -1135,7 +1133,7 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">COURSES & PRICING</div>
-                <h2 class="section-title">コース体系</h2>
+                <h2 class="section-title">コース・料金体系</h2>
             </div>
 
             <div class="pricing-intro animate-on-scroll">
@@ -1146,15 +1144,19 @@
 
                 <div class="guarantees">
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">受験戦略<br>コンサルティング</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">添削回数<br>無制限</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">いつでも相談可<br>48時間以内返信</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">定期的な<br>三者面談</div>
                     </div>
                 </div>
@@ -1163,7 +1165,7 @@
             <div class="courses">
                 <div class="course-section animate-on-scroll">
                     <div class="course-header">
-                        <h3>【高2生】<br>早期エリート育成コース</h3>
+                        <h3>【高2生】早期エリート育成コース（月額制）</h3>
                         <p>難関大合格を目指す意欲ある総合型選抜での合格を確実にしたい高校1年〜2年生のためのコース</p>
                         <div class="course-meta">
                             <div class="course-meta-item">
@@ -1203,7 +1205,7 @@
 
                 <div class="course-section animate-on-scroll">
                     <div class="course-header">
-                        <h3>【高3生】<br>合格完遂コース</h3>
+                        <h3>【高3生】合格完遂コース（パッケージ制）</h3>
                         <p>圧倒的な一次通過率と戦略的併願で、確実に合格を獲りに行く。</p>
                         <div class="course-meta">
                             <div class="course-meta-item">
@@ -1290,10 +1292,10 @@
                                 あなたの状況に合わせた最適なプランをご提案いたします。
                             </p>
                             <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
-                                <a href="https://forms.gle/HvQS2AaEdas9vmeE9" target="_blank" class="btn btn-secondary" style="display: inline-block; min-width: 200px;">
+                                <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" class="btn btn-secondary" style="display: inline-block; min-width: 200px; color: #000 !important; border-color: var(--gold);">
                                     資料請求
                                 </a>
-                                <a href="https://forms.gle/1WageyjXxuKDorrS7" target="_blank" class="btn btn-primary" style="display: inline-block; min-width: 200px;">
+                                <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" class="btn btn-primary" style="display: inline-block; min-width: 200px;">
                                     個別コンサルティングに申し込む
                                 </a>
                             </div>
@@ -1397,7 +1399,7 @@
 
             <div class="profile-content animate-on-scroll">
                 <div class="profile-image">
-                    <div class="profile-placeholder">👤</div>
+                    <img src="" alt="Noah M." style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="profile-info">
                     <h3 class="profile-name">Noah M.</h3>
@@ -1484,7 +1486,7 @@
                     <p style="font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 2rem;">
                         以下のフォームからご請求ください
                     </p>
-                    <a href="https://forms.gle/HvQS2AaEdas9vmeE9" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
+                    <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
                         資料請求フォームへ
                     </a>
                 </div>
@@ -1506,7 +1508,7 @@
             </p>
             
             <div class="action-wrapper">
-                <a href="https://forms.gle/1WageyjXxuKDorrS7" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
+                <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.5rem 4rem;">
                     入塾審査・個別コンサルティングに申し込む
                 </a>
             </div>
@@ -1528,37 +1530,10 @@
             2025年度生募集中
             <span class="sticky-cta-urgency">残り枠数わずか</span>
         </div>
-        <a href="#materials" class="sticky-cta-btn">まずは資料を請求する</a>
+        <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" class="sticky-cta-btn">まずは資料を請求する</a>
     </div>
 
     <script>
-        // --- アコーディオン(details)のレスポンシブ制御 ---
-        // スマホ(<=768px)では閉じ、PCでは開くための初期設定
-        function initDetails() {
-            const allDetails = document.querySelectorAll('details');
-            const isMobile = window.innerWidth <= 768;
-            
-            allDetails.forEach(detail => {
-                if (isMobile) {
-                    detail.removeAttribute('open'); // スマホなら閉じる
-                } else {
-                    detail.setAttribute('open', ''); // PCなら開く
-                }
-            });
-        }
-
-        // 初期化実行
-        initDetails();
-
-        // 画面リサイズ時にも再判定する（横持ちなどに対応）
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(initDetails, 200);
-        });
-
-        // --- 以下既存スクリプト ---
-
         // ハンバーガーメニューの開閉処理
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
@@ -1626,6 +1601,30 @@
             } else {
                 stickyCta.classList.remove('visible');
             }
+        });
+
+        // アコーディオン(details)のレスポンシブ制御
+        function initDetails() {
+            const allDetails = document.querySelectorAll('details');
+            const isMobile = window.innerWidth <= 768;
+            
+            allDetails.forEach(detail => {
+                if (isMobile) {
+                    detail.removeAttribute('open'); // スマホなら閉じる
+                } else {
+                    detail.setAttribute('open', ''); // PCなら開く
+                }
+            });
+        }
+
+        // 初期化実行
+        initDetails();
+
+        // 画面リサイズ時にも再判定する（横持ちなどに対応）
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(initDetails, 200);
         });
     </script>
 </body>
