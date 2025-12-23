@@ -320,8 +320,23 @@
         /* --- Crisis Section --- */
         .crisis { background: var(--off-white); }
         .crisis-content { max-width: 900px; margin: 0 auto; text-align: center; }
-        .crisis h2 { font-size: 2.8rem; margin-bottom: 2.5rem; color: var(--navy); line-height: 1.4; }
-        .crisis p { font-size: 1.15rem; line-height: 2; color: var(--navy); margin-bottom: 2rem; }
+        
+        /* 修正: フォントサイズ縮小 */
+        .crisis h2 { 
+            font-size: 2.4rem; 
+            margin-bottom: 2.5rem; 
+            color: var(--navy); 
+            line-height: 1.5; 
+        }
+        
+        /* 修正: テキスト左揃え */
+        .crisis p { 
+            font-size: 1.15rem; 
+            line-height: 2; 
+            color: var(--navy); 
+            margin-bottom: 2rem;
+            text-align: left; /* 左揃えに変更 [cite: 30] */
+        }
         
         .crisis-highlight {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
@@ -335,17 +350,21 @@
         .crisis-highlight::before {
             content: ''; position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: var(--gold);
         }
+        /* 修正: 文字サイズ縮小・左揃え [cite: 39] */
         .crisis-highlight p {
-            color: var(--white); font-size: 1.25rem; font-weight: 500; margin: 0;
+            color: var(--white); 
+            font-size: 1rem; /* 縮小 */
+            font-weight: 500; 
+            margin: 0;
+            text-align: left;
         }
 
         /* --- Value Proposition & Skills (Accordion Base Styles) --- */
-        /* PC用：アコーディオン無効化（常時表示） */
         details { display: block; }
         details > summary {
             list-style: none;
             cursor: default;
-            pointer-events: none; /* PCではクリック無効 */
+            pointer-events: none;
         }
         details > summary::-webkit-details-marker { display: none; }
         
@@ -354,7 +373,7 @@
         .props-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 4rem;
+            gap: 2rem; /* 修正: 余白を縮小 (4rem -> 2rem)  */
             margin-top: 4rem;
         }
         .prop-card {
@@ -395,12 +414,12 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            gap: 1.5rem; /* 修正: 余白を縮小 (2.5rem -> 1.5rem)  */
             margin-top: 4rem;
         }
         .skill-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem; /* 修正: パディング調整 */
             border-left: 4px solid var(--gold);
             transition: all 0.3s ease;
         }
@@ -416,10 +435,10 @@
             font-size: 1.2rem;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem; /* 修正: 余白縮小 */
         }
         .skill-title { font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
-        .skill-subtitle { font-size: 0.9rem; color: var(--gold-dark); margin-bottom: 1rem; font-weight: 600; }
+        .skill-subtitle { font-size: 0.9rem; color: var(--gold-dark); margin-bottom: 0.8rem; font-weight: 600; }
         .skill-description { font-size: 1rem; line-height: 1.8; }
 
         /* --- Curriculum Section --- */
@@ -634,7 +653,7 @@
             text-align: center;
         }
 
-        /* --- Sticky CTA --- */
+        /* --- Sticky CTA (JSで表示制御) --- */
         .sticky-cta {
             position: fixed; bottom: 0; left: 0; right: 0;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
@@ -643,7 +662,11 @@
             z-index: 999;
             display: flex; justify-content: space-between; align-items: center;
             border-top: 2px solid var(--gold);
-            animation: slideUp 0.5s ease-out;
+            transform: translateY(100%); /* 初期状態は隠す */
+            transition: transform 0.5s ease-out;
+        }
+        .sticky-cta.visible {
+            transform: translateY(0);
         }
         .sticky-cta-text { color: var(--white); font-size: 0.95rem; font-weight: 600; }
         .sticky-cta-urgency { color: var(--gold); font-weight: 700; margin-left: 0.5rem; }
@@ -660,8 +683,8 @@
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes slideUp {
-            from { transform: translateY(100%); opacity: 0; }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
@@ -709,9 +732,19 @@
             
             /* Sections */
             section { padding: 4rem 0; }
-            .section-title { font-size: 1.7rem; line-height: 1.4; } /* 見出しサイズ縮小 */
-            .props-grid, .skills-grid, .guarantees, .plan-comparison, .voice-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.7rem; line-height: 1.4; } 
             
+            /* 修正: SP版での余白調整 */
+            .props-grid { gap: 1rem; margin-top: 2rem; }
+            .skills-grid { gap: 1rem; margin-top: 2rem; }
+            
+            .guarantees, .plan-comparison, .voice-grid { grid-template-columns: 1fr; }
+            
+            /* Crisis調整 (SP) */
+            .crisis h2 { font-size: 2rem; margin-bottom: 2rem; }
+            .crisis p { font-size: 1rem; line-height: 1.8; }
+            .crisis-highlight p { font-size: 0.95rem; }
+
             /* アコーディオン(スマホ用スタイル) */
             details { margin-bottom: 1rem; }
             details > summary {
@@ -778,7 +811,8 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
+            <div class="hero-tag">PROFESSIONAL ADMISSIONS</div>
+            
             <h1><span class="ib">1学年6名限定。</span><br class="pc-br"><span class="ib">戦略で難関大合格を。</span></h1>
             <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン私塾</span><span class="ib">「Ark College」</span></p>
             <p class="hero-description">
@@ -1586,6 +1620,17 @@
                 answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
                 icon.textContent = answer.style.display === 'block' ? '−' : '+';
             });
+        });
+
+        // Sticky CTA Scroll Control
+        window.addEventListener('scroll', () => {
+            const stickyCta = document.querySelector('.sticky-cta');
+            // ヒーローセクションを超えたら表示 (約800px)
+            if (window.scrollY > 800) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
         });
     </script>
 </body>
