@@ -38,7 +38,7 @@
             overflow-wrap: break-word;
         }
 
-        /* 文節のまとまりを作る */
+        /* --- ユーティリティ --- */
         .ib { display: inline-block; }
         .pc-br { display: inline; }
         .sp-br { display: none; }
@@ -51,7 +51,7 @@
             letter-spacing: 0.02em;
         }
 
-        /* Navigation */
+        /* --- Navigation --- */
         nav {
             position: fixed;
             top: 0;
@@ -132,7 +132,7 @@
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-lighter) 100%);
@@ -164,11 +164,6 @@
             max-width: 1200px;
             padding: 0 2rem;
             animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-tag {
@@ -203,6 +198,7 @@
             line-height: 1.9;
         }
 
+        /* 実績ブロック */
         .achievements {
             display: flex;
             justify-content: center;
@@ -234,6 +230,7 @@
             line-height: 1.6;
         }
 
+        /* CTA Buttons */
         .cta-group {
             display: flex;
             gap: 1.5rem;
@@ -287,7 +284,7 @@
             line-height: 1.6;
         }
 
-        /* Section Styles */
+        /* --- Section Styles --- */
         section {
             padding: 8rem 0;
             position: relative;
@@ -320,7 +317,7 @@
             font-weight: 900;
         }
 
-        /* Crisis Section */
+        /* --- Crisis Section --- */
         .crisis { background: var(--off-white); }
         .crisis-content { max-width: 900px; margin: 0 auto; text-align: center; }
         .crisis h2 { font-size: 2.8rem; margin-bottom: 2.5rem; color: var(--navy); line-height: 1.4; }
@@ -342,7 +339,17 @@
             color: var(--white); font-size: 1.25rem; font-weight: 500; margin: 0;
         }
 
-        /* Value Proposition */
+        /* --- Value Proposition & Skills (Accordion Base Styles) --- */
+        /* PC用：アコーディオン無効化（常時表示） */
+        details { display: block; }
+        details > summary {
+            list-style: none;
+            cursor: default;
+            pointer-events: none; /* PCではクリック無効 */
+        }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        /* Value Props */
         .value-props { background: var(--white); }
         .props-grid {
             display: grid;
@@ -415,7 +422,7 @@
         .skill-subtitle { font-size: 0.9rem; color: var(--gold-dark); margin-bottom: 1rem; font-weight: 600; }
         .skill-description { font-size: 1rem; line-height: 1.8; }
 
-        /* Curriculum Section */
+        /* --- Curriculum Section --- */
         .curriculum { background: var(--white); }
         .curriculum-steps { margin-top: 4rem; }
         .step {
@@ -440,7 +447,7 @@
         .step-subtitle { font-size: 1rem; color: var(--gold-dark); margin-bottom: 1rem; font-weight: 600; }
         .step-description { font-size: 1.05rem; line-height: 1.8; }
 
-        /* Pricing Section */
+        /* --- Pricing Section --- */
         .pricing { background: var(--off-white); }
         .pricing-intro {
             max-width: 1200px;
@@ -520,7 +527,14 @@
         .plan-card.highlight .plan-row label { color: rgba(255,255,255,0.6); }
         .plan-row .val { font-size: 1rem; font-weight: 600; }
         
-        /* Voice Section */
+        .pricing-note {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-top: 2rem;
+            line-height: 1.7;
+        }
+
+        /* --- Voice Section --- */
         .voice { background: var(--white); }
         .voice-grid {
             display: grid;
@@ -535,12 +549,56 @@
         .voice-univ { color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem; }
         .voice-msg { font-size: 0.95rem; line-height: 1.8; }
 
-        /* Profile */
+        /* --- Selection Process --- */
+        .selection { background: var(--white); }
+        .selection-content { max-width: 900px; margin: 0 auto; }
+        .selection-message {
+            background: var(--off-white);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--gold);
+        }
+        .criteria { display: grid; gap: 2rem; margin: 3rem 0; }
+        .criteria-item {
+            display: flex; align-items: center; gap: 2rem;
+            padding: 2rem; background: var(--white); border: 2px solid var(--gold);
+        }
+        .criteria-number {
+            flex-shrink: 0; width: 60px; height: 60px;
+            background: var(--gold); color: var(--navy);
+            font-size: 1.8rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+        }
+        .criteria-text { font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+        
+        .process-flow {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 4rem; flex-wrap: wrap; gap: 2rem;
+        }
+        .process-step {
+            flex: 1; min-width: 200px; text-align: center;
+            padding: 2rem; background: var(--off-white); position: relative;
+        }
+        .process-step::after {
+            content: '→'; position: absolute; right: -2rem; top: 50%;
+            transform: translateY(-50%); font-size: 2rem; color: var(--gold);
+        }
+        .process-step:last-child::after { display: none; }
+        .process-step-number {
+            display: inline-block; width: 50px; height: 50px;
+            background: var(--gold); color: var(--navy); font-weight: 700;
+            font-size: 1.3rem; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        /* --- Profile --- */
         .profile { background: var(--off-white); }
         .profile-content { display: flex; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: start; }
         .profile-image {
             flex-shrink: 0; width: 300px; height: 350px;
-            background: #ccc; /* Placeholder color */
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             display: flex; align-items: center; justify-content: center;
             font-size: 4rem; color: #fff;
         }
@@ -549,25 +607,78 @@
         .profile-title { font-size: 1.1rem; color: var(--gold-dark); margin-bottom: 1.5rem; }
         .profile-tagline { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--gold); }
 
-        /* FAQ */
+        /* --- FAQ --- */
         .faq { background: var(--white); }
         .faq-item { border: 1px solid var(--gray-light); margin-bottom: 1rem; }
         .faq-question { padding: 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
         .faq-answer { padding: 0 1.5rem 1.5rem; display: none; font-size: 0.95rem; }
 
-        /* Final CTA */
+        /* --- Final CTA --- */
         .final-cta {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: var(--white);
             padding: 6rem 2rem;
             text-align: center;
         }
+        .final-cta h2 { font-size: 3rem; color: var(--gold); margin-bottom: 2rem; font-weight: 900; }
+        .action-wrapper {
+            display: flex; align-items: center; justify-content: center;
+            gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap;
+        }
 
-        /* Responsive */
+        /* --- Footer --- */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        /* --- Sticky CTA --- */
+        .sticky-cta {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 -5px 20px rgba(10, 22, 40, 0.3);
+            z-index: 999;
+            display: flex; justify-content: space-between; align-items: center;
+            border-top: 2px solid var(--gold);
+            animation: slideUp 0.5s ease-out;
+        }
+        .sticky-cta-text { color: var(--white); font-size: 0.95rem; font-weight: 600; }
+        .sticky-cta-urgency { color: var(--gold); font-weight: 700; margin-left: 0.5rem; }
+        .sticky-cta-btn {
+            padding: 0.8rem 2rem; background: var(--gold); color: var(--navy);
+            font-weight: 700; border: none; cursor: pointer;
+            text-decoration: none; font-size: 0.95rem; white-space: nowrap;
+        }
+
+        /* --- Animations --- */
+        .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: 0.8s; }
+        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* -----------------------
+           Responsive Styles
+        ----------------------- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .props-grid { grid-template-columns: 1fr; }
+            .profile-content { flex-direction: column; padding: 0 1rem; }
+            .profile-image { width: 100%; max-width: 300px; margin: 0 auto; }
+        }
+
         @media (max-width: 768px) {
+            /* 基本設定 */
             .pc-br { display: none; }
             .sp-br { display: block; }
-            
             .container { padding: 0 1.25rem; }
             
             /* Nav */
@@ -582,36 +693,70 @@
             
             /* Hero */
             .hero h1 { font-size: 2.2rem; }
-            .achievements { gap: 1rem; flex-direction: column; align-items: center; }
+            /* 実績：横一列に修正 */
+            .achievements {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                gap: 0.5rem;
+            }
+            .achievement-item { flex: 1; min-width: 0; padding: 0; }
+            .achievement-value { font-size: 1.5rem; margin-bottom: 0; }
+            .achievement-label { font-size: 0.65rem; line-height: 1.2; }
+
             .cta-group { flex-direction: column; width: 100%; }
             .btn { width: 100%; }
             
             /* Sections */
             section { padding: 4rem 0; }
-            .section-title { font-size: 2rem; }
-            .props-grid, .skills-grid, .guarantees, .plan-comparison { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.7rem; line-height: 1.4; } /* 見出しサイズ縮小 */
+            .props-grid, .skills-grid, .guarantees, .plan-comparison, .voice-grid { grid-template-columns: 1fr; }
             
-            .step { flex-direction: column; }
+            /* アコーディオン(スマホ用スタイル) */
+            details { margin-bottom: 1rem; }
+            details > summary {
+                cursor: pointer;
+                pointer-events: auto;
+                position: relative;
+                padding-right: 2rem;
+            }
+            details > summary::after {
+                content: '+'; position: absolute; right: 0; top: 0;
+                color: var(--gold); font-size: 1.5rem; font-weight: bold;
+            }
+            details[open] > summary::after { content: '-'; }
+            
+            /* Reason & Skill Cards Mobile */
+            .prop-card, .skill-card { padding: 1.5rem; }
+            .prop-title, .skill-title { font-size: 1.3rem; margin-bottom: 0; display: inline-block; }
+            .skill-number { display: inline-flex; margin-bottom: 0; margin-right: 1rem; width: 30px; height: 30px; font-size: 1rem; }
+
+            /* Step */
+            .step { flex-direction: column; gap: 1rem; }
             .step-number { width: 60px; height: 60px; font-size: 1.8rem; }
             
-            .profile-content { flex-direction: column; }
+            /* Profile */
             .profile-image { width: 100%; height: 300px; margin-bottom: 2rem; }
 
-            .course-header { padding: 2rem 1.5rem; }
-            .course-content { padding: 2rem 1.5rem; }
+            /* Misc */
+            .course-header, .course-content, .pricing-intro { padding: 2rem 1.5rem; }
+            .process-step::after {
+                content: '↓'; right: auto; left: 50%; top: auto; bottom: -2rem; transform: translateX(-50%);
+            }
+            .final-cta { padding: 5rem 2rem; }
+            .final-cta h2 { font-size: 2.2rem; line-height: 1.4; }
             
-            .pricing-intro { padding: 2rem 1.5rem; }
+            /* Sticky CTA */
+            .sticky-cta { flex-direction: column; gap: 0.8rem; text-align: center; }
+            .sticky-cta-btn { width: 100%; }
         }
-        
-        .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: 0.8s; }
-        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABmGSURBVHgB7d0JeFTV+Qfw703IwhZCWMKSsO+gsgVkEVBBQEFAUbEqiktbrda9Vq1LrVr3rbXW2lqrVq22iksFBRQVEBBZBNn3LYEQIBB2ss7/d+YOk8lkJvd95965d5Lv53nOM5PIzL13bu7vnvu7v3POdRAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZGV1ASQjT0S/SxuqPwbFwC/HwD/ceAvjoBfkXyv8hCcLA5fIv5uXQD8Th0AxSXArxLq1gNQ7z8FdRoAqJcCfkPx39VHARTVQwGUlAKonAqg4j9B+O96/xrg1z0FoCQVr0XKePVR83PkdwT/rTT8bwT4DQAEq3CtvBr42Y/C15cApODa2XUT/l0M/kr86/h/V32/Av9f7yS+JuL7FXUB1MuvVS+IiKKXik3JARQhTp4FUJwToLxBABr3A9DyPADNLgfQ7BoATQcBaDQGQMMJABqNBtBgHICGFwFoMBFA/fEANPy3IAWhKSjxQsHJzQPgrwDgPwEgMABAsA+AoisBBG4GUHktgOKrAJRcC8B/M4DSGwH4cO18uK5+3Fe+Av/u7wGQ1xFAbh8AeYMBFA4DUHQ1gKIxAEomACi5DkBwKoDyGQAqpwOomAbAfzOA0lsBBG4F4J8KIOgHgO9vAQC+PwMIrgYQLJoNIDgbQPAG/PuNAIJzAARvAhCYByCwAEBgIYCKRfh3fJ/yxQDKFwMoWw6gYimA8mUAypcDKF8BwLca184x/L2sA+BfCMC/CMBJ/L1sBlCwFsDB5QByV+JaqgFUjQUQmAigfByA8usBlE8AUD4eQGA8gMA1AIKTYY0TuM/8C3D/6X9B6DkC/N7kI/B7UrgZQNkmXKMdAIq2ACjdBqB8F4DAAQCV+wH49wPw58J6bj6sVx+3iVr4tykBdQ2uWRNco4bvQ21cQ18Dq+X/tM+rPAC/H0CZ/wi+x38M18t/Cv89fz+AkhO4dp74qn4V/v9OAyhOBVCUCutn4Pu/Gv/+U/HftQDkyPf4Cv4+Kvz/NoDKTvjvRr0ANOkPoMlQAE1GAGgxDkDL6wC0uwNA6+kAWs/G9+cBaDsP16o9gJbX4vv4b6BefQBN8W8tB+HnppUAlFwG69VNMfD7B3C/D/cIX7ve+N4QAM3HAmg+BkDzVFivZSqA1rjvtRwDoNVYAK0mAWh9LYB2t+J7dwFoNxv3tI6439XD93v1QQC+AbBGCW4XtZn11MuwXl18f1Adq3V3/H/P6wG0uARAmysAtP0ngI5XA2h7F4CO9wPoeA+u3TDcP/vguzfiO7i++D6vh++3xl+vGb5f6gto+1wCX3/cI+oeBJA7Au6I3wL8/gPQZhq+34Hb4En83dYHUDIKQN4EAAdnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAg" alt="ARK COLLEGE" class="logo-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABmGSURBVHgB7d0JeFTV+Qfw703IwhZCWMKSsO+gsgVkEVBBQEFAUbEqiktbrda9Vq1LrVr3rbXW2lqrVq22iksFBRQVEBBZBNn3LYEQIBB2ss7/d+YOk8lkJvd95965d5Lv53nOM5PIzL13bu7vnvu7v3POdRAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZGV1ASQjT0S/SxuqPwbFwC/HwD/ceAvjoBfkXyv8hCcLA5fIv5uXQD8Th0AxSXArxLq1gNQ7z8FdRoAqJcCfkPx39VHARTVQwGUlAKonAqg4j9B+O96/xrg1z0FoCQVr0XKePVR83PkdwT/rTT8bwT4DQAEq3CtvBr42Y/C15cApODa2XUT/l0M/kr86/h/V32/Av9f7yS+JuL7FXUB1MuvVS+IiKKXik3JARQhTp4FUJwToLxBABr3A9DyPADNLgfQ7BoATQcBaDQGQMMJABqNBtBgHICGFwFoMBFA/fEANPy3IAWhKSjxQsHJzQPgrwDgPwEgMABAsA+AoisBBG4GUHktgOKrAJRcC8B/M4DSGwH4cO18uK5+3Fe+Av/u7wGQ1xFAbh8AeYMBFA4DUHQ1gKIxAEomACi5DkBwKoDyGQAqpwOomAbAfzOA0lsBBG4F4J8KIOgHgO9vAQC+PwMIrgYQLJoNIDgbQPAG/PuNAIJzAARvAhCYByCwAEBgIYCKRfh3fJ/yxQDKFwMoWw6gYimA8mUAypcDKF8BwLca184x/L2sA+BfCMC/CMBJ/L1sBlCwFsDB5QByV+JaqgFUjQUQmAigfByA8usBlE8AUD4eQGA8gMA1AIKTYY0TuM/8C3D/6X9B6DkC/N7kI/B7UrgZQNkmXKMdAIq2ACjdBqB8F4DAAQCV+wH49wPw58J6bj6sVx+3iVr4tykBdQ2uWRNco4bvQ21cQ18Dq+X/tM+rPAC/H0CZ/wi+x38M18t/Cv89fz+AkhO4dp74qn4V/v9OAyhOBVCUCutn4Pu/Gv/+U/HftQDkyPf4Cv4+Kvz/NoDKTvjvRr0ANOkPoMlQAE1GAGgxDkDL6wC0uwNA6+kAWs/G9+cBaDsP16o9gJbX4vv4b6BefQBN8W8tB+HnppUAlFwG69VNMfD7B3C/D/cIX7ve+N4QAM3HAmg+BkDzVFivZSqA1rjvtRwDoNVYAK0mAWh9LYB2t+J7dwFoNxv3tI6439XD93v1QQC+AbBGCW4XtZn11MuwXl18f1Adq3V3/H/P6wG0uARAmysAtP0ngI5XA2h7F4CO9wPoeA+u3TDcP/vguzfiO7i++D6vh++3xl+vGb5f6gto+1wCX3/cI+oeBJA7Au6I3wL8/gPQZhq+34Hb4En83dYHUDIKQN4EAAdnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAg" alt="ARK COLLEGE" class="logo-image">
             </a>
             
             <div class="hamburger">
@@ -678,7 +823,7 @@
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
-                <h2><span class="ib">一生を左右する受験戦略は、</span><br><span class="ib">プロに任せませんか？</span></h2>
+                <h2>一生を左右する受験戦略は、<br>プロに任せませんか？</h2>
                 
                 <p>
                     総合型選抜は、単なる「作文コンクール」ではありません。<br class="pc-br">
@@ -705,83 +850,99 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">WHY ARK COLLEGE</div>
-                <h2 class="section-title">総合型選抜"プロフェッショナル・ファーム"<br>アーク・カレッジが選ばれる4つの理由</h2>
+                <h2 class="section-title">アーク・カレッジが<br class="sp-br">選ばれる4つの理由</h2>
             </div>
 
             <div class="props-grid">
-                <div class="prop-card animate-on-scroll">
-                    <div class="prop-number">REASON 01</div>
-                    <h3 class="prop-title">100%合格へと導く<br>「受験戦略コンサルティング」</h3>
-                    <p class="prop-catch">生徒のポテンシャル × 志望校特性</p>
-                    <div class="prop-body">
-                        <p>
-                            累計50名以上の指導において、<strong>進学先確保率100%</strong>を継続中。<br>
-                            さらに、第一志望合格率は70%超。<br>
-                            これは偶然ではなく、個々の特性を最大化する「戦略」があるからです。
-                        </p>
-                        <p>
-                            「合格可能性を極限まで高める併願戦略」と<br>
-                            「評価されるストーリー設計」をプロが立案します。
-                        </p>
+                <details class="prop-card animate-on-scroll" open>
+                    <summary>
+                        <div class="prop-number">REASON 01</div>
+                        <h3 class="prop-title">100%合格へと導く<br>「受験戦略コンサルティング」</h3>
+                    </summary>
+                    <div class="details-content">
+                        <p class="prop-catch">生徒のポテンシャル × 志望校特性</p>
+                        <div class="prop-body">
+                            <p>
+                                累計50名以上の指導において、<strong>進学先確保率100%</strong>を継続中。<br>
+                                さらに、第一志望合格率は70%超。<br>
+                                これは偶然ではなく、個々の特性を最大化する「戦略」があるからです。
+                            </p>
+                            <p>
+                                「合格可能性を極限まで高める併願戦略」と<br>
+                                「評価されるストーリー設計」をプロが立案します。
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </details>
 
-                <div class="prop-card animate-on-scroll">
-                    <div class="prop-number">REASON 02</div>
-                    <h3 class="prop-title">31校・50名以上の実績に基づく<br>「完全個別カリキュラム」</h3>
-                    <p class="prop-catch">バイト講師ゼロ。<br>代表講師があなただけの最適解を設計。</p>
-                    <div class="prop-body">
-                        <p>
-                            これまでに<strong>計31大学・50名以上</strong>を合格へ導いた代表講師が、<br>
-                            全工程をマンツーマンで伴走します。
-                        </p>
-                        <p>
-                            大手塾のような「画一的なテキスト」は存在しません。<br>
-                            あなたの志望校、現在の能力、性格に合わせて、<br>
-                            <strong>完全オーダーメイドのカリキュラム</strong>を提案。
-                        </p>
-                        <p>
-                            一般選抜とは違い、評価基準が千差万別な総合型選抜。<br>
-                            戦略で合否が決まる総合型選抜において、<br>
-                            経験豊富なトッププロが直接担当する安心感を提供します。
-                        </p>
+                <details class="prop-card animate-on-scroll" open>
+                    <summary>
+                        <div class="prop-number">REASON 02</div>
+                        <h3 class="prop-title">31校・50名以上の実績に基づく<br>「完全個別カリキュラム」</h3>
+                    </summary>
+                    <div class="details-content">
+                        <p class="prop-catch">バイト講師ゼロ。<br>代表講師があなただけの最適解を設計。</p>
+                        <div class="prop-body">
+                            <p>
+                                これまでに<strong>計31大学・50名以上</strong>を合格へ導いた代表講師が、<br>
+                                全工程をマンツーマンで伴走します。
+                            </p>
+                            <p>
+                                大手塾のような「画一的なテキスト」は存在しません。<br>
+                                あなたの志望校、現在の能力、性格に合わせて、<br>
+                                <strong>完全オーダーメイドのカリキュラム</strong>を提案。
+                            </p>
+                            <p>
+                                一般選抜とは違い、評価基準が千差万別な総合型選抜。<br>
+                                戦略で合否が決まる総合型選抜において、<br>
+                                経験豊富なトッププロが直接担当する安心感を提供します。
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </details>
 
-                <div class="prop-card animate-on-scroll">
-                    <div class="prop-number">REASON 03</div>
-                    <h3 class="prop-title">添削・相談無制限。<br>「いつでも相談できる」安心感</h3>
-                    <p class="prop-catch">悩みを翌週に持ち越さない。<br>24時間365日、あなたの味方です。</p>
-                    <div class="prop-body">
-                        <p>
-                            「添削回数」も「チャット相談」も無制限。<br>
-                            <strong>納得いくまで何度でも書き直し、<br>疑問があればすぐに解消できます。</strong>
-                        </p>
-                        <p>
-                            原則48時間以内に返信。<br>
-                            深夜でも早朝でも、私たちはあなたの不安を受け止めます。
-                        </p>
-                        <p>
-                            また、<strong>「定期的な三者面談」</strong>を実施。<br>
-                            保護者様とも密に連携し、<br>
-                            家庭でのサポート体制まで含めてチームで合格を目指します。
-                        </p>
+                <details class="prop-card animate-on-scroll" open>
+                    <summary>
+                        <div class="prop-number">REASON 03</div>
+                        <h3 class="prop-title">添削・相談無制限。<br>「いつでも相談できる」安心感</h3>
+                    </summary>
+                    <div class="details-content">
+                        <p class="prop-catch">悩みを翌週に持ち越さない。<br>24時間365日、あなたの味方です。</p>
+                        <div class="prop-body">
+                            <p>
+                                「添削回数」も「チャット相談」も無制限。<br>
+                                <strong>納得いくまで何度でも書き直し、<br>疑問があればすぐに解消できます。</strong>
+                            </p>
+                            <p>
+                                原則48時間以内に返信。<br>
+                                深夜でも早朝でも、私たちはあなたの不安を受け止めます。
+                            </p>
+                            <p>
+                                また、<strong>「定期的な三者面談」</strong>を実施。<br>
+                                保護者様とも密に連携し、<br>
+                                家庭でのサポート体制まで含めてチームで合格を目指します。
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </details>
 
-                <div class="prop-card animate-on-scroll">
-                    <div class="prop-number">REASON 04</div>
-                    <h3 class="prop-title">受験を超えて一生使える<br>「6つのソフトスキル」養成</h3>
-                    <p class="prop-catch">大学合格はゴールではない。<br>社会で活躍するための「知性」を育む。</p>
-                    <div class="prop-body">
-                        <p>
-                            Ark Collegeの指導は、小手先の受験テクニックではありません。<br>
-                            厳しい対話と指導を通じて、大学入学後、<br>
-                            そして社会人となってからも一生涯武器となる<br>
-                            <strong>「本質的な能力」</strong>をインストールします。
-                        </p>
+                <details class="prop-card animate-on-scroll" open>
+                    <summary>
+                        <div class="prop-number">REASON 04</div>
+                        <h3 class="prop-title">受験を超えて一生使える<br>「6つのソフトスキル」養成</h3>
+                    </summary>
+                    <div class="details-content">
+                        <p class="prop-catch">大学合格はゴールではない。<br>社会で活躍するための「知性」を育む。</p>
+                        <div class="prop-body">
+                            <p>
+                                Ark Collegeの指導は、小手先の受験テクニックではありません。<br>
+                                厳しい対話と指導を通じて、大学入学後、<br>
+                                そして社会人となってからも一生涯武器となる<br>
+                                <strong>「本質的な能力」</strong>をインストールします。
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </details>
             </div>
 
             <div style="text-align: center; margin-top: 4rem;">
@@ -801,59 +962,83 @@
             </div>
 
             <div class="skills-grid">
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">1</div>
-                    <h4 class="skill-title">論理的思考力</h4>
-                    <p class="skill-subtitle">【本質的な課題解決力】</p>
-                    <p class="skill-description">
-                        複雑な情報や問題に対し、感情論ではなく、「なぜそうなるのか」という因果関係を明確にし、筋道を立てて考える力です。レポート作成、議論、仕事でのトラブルシューティングなど、あらゆる場面で最も合理的で説得力のある結論を導き出す土台となります。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">1</div>
+                        <h4 class="skill-title">論理的思考力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【本質的な課題解決力】</p>
+                        <p class="skill-description">
+                            複雑な情報や問題に対し、感情論ではなく、「なぜそうなるのか」という因果関係を明確にし、筋道を立てて考える力です。レポート作成、議論、仕事でのトラブルシューティングなど、あらゆる場面で最も合理的で説得力のある結論を導き出す土台となります。
+                        </p>
+                    </div>
+                </details>
 
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">2</div>
-                    <h4 class="skill-title">調査・情報収集力</h4>
-                    <p class="skill-subtitle">【信頼性の高い意思決定力】</p>
-                    <p class="skill-description">
-                        必要な情報を効率的に探し出すだけでなく、その情報源が信頼できるものか、偏りはないかを評価する力です。正確な情報に基づいた判断力を培います。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">2</div>
+                        <h4 class="skill-title">調査・情報収集力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【信頼性の高い意思決定力】</p>
+                        <p class="skill-description">
+                            必要な情報を効率的に探し出すだけでなく、その情報源が信頼できるものか、偏りはないかを評価する力です。正確な情報に基づいた判断力を培います。
+                        </p>
+                    </div>
+                </details>
 
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">3</div>
-                    <h4 class="skill-title">文章構成力・表現力</h4>
-                    <p class="skill-subtitle">【説得と伝達のプロフェッショナル】</p>
-                    <p class="skill-description">
-                        自分の考えや主張を、結論から逆算した論理的な構成で、読み手を納得させる文章に落とし込む力です。学術論文からビジネスの企画書、公的な文書まで、読み手を動かし、目的を達成するための強力なツールとなります。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">3</div>
+                        <h4 class="skill-title">文章構成力・表現力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【説得と伝達のプロフェッショナル】</p>
+                        <p class="skill-description">
+                            自分の考えや主張を、結論から逆算した論理的な構成で、読み手を納得させる文章に落とし込む力です。学術論文からビジネスの企画書、公的な文書まで、読み手を動かし、目的を達成するための強力なツールとなります。
+                        </p>
+                    </div>
+                </details>
 
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">4</div>
-                    <h4 class="skill-title">自己分析力・メタ認知能力</h4>
-                    <p class="skill-subtitle">【自己理解と適応力】</p>
-                    <p class="skill-description">
-                        総合型選抜の先駆けである海外の学習カリキュラムでは一般的に普及している、いわゆるリフレクション科目です。「自分は何に価値を置き、なぜこの行動をとったのか」を客観的に把握する力を養います。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">4</div>
+                        <h4 class="skill-title">自己分析力・メタ認知能力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【自己理解と適応力】</p>
+                        <p class="skill-description">
+                            総合型選抜の先駆けである海外の学習カリキュラムでは一般的に普及している、いわゆるリフレクション科目です。「自分は何に価値を置き、なぜこの行動をとったのか」を客観的に把握する力を養います。
+                        </p>
+                    </div>
+                </details>
 
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">5</div>
-                    <h4 class="skill-title">目標設定・自己管理能力</h4>
-                    <p class="skill-subtitle">【自律的なプロジェクト遂行力】</p>
-                    <p class="skill-description">
-                        大きな目標を達成するために、タスクを細分化し、スケジュールを引き、進捗をチェックしながら実行しきる力です。大学の単位取得から、仕事での大規模プロジェクトの管理、個人の健康管理に至るまで、限られた資源（時間、体力など）を最大限に活用して成果を出す能力です。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">5</div>
+                        <h4 class="skill-title">目標設定・自己管理能力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【自律的なプロジェクト遂行力】</p>
+                        <p class="skill-description">
+                            大きな目標を達成するために、タスクを細分化し、スケジュールを引き、進捗をチェックしながら実行しきる力です。大学の単位取得から、仕事での大規模プロジェクトの管理、個人の健康管理に至るまで、限られた資源（時間、体力など）を最大限に活用して成果を出す能力です。
+                        </p>
+                    </div>
+                </details>
 
-                <div class="skill-card animate-on-scroll">
-                    <div class="skill-number">6</div>
-                    <h4 class="skill-title">プレゼンテーション能力</h4>
-                    <p class="skill-subtitle">【効果的な発信力と影響力】</p>
-                    <p class="skill-description">
-                        授業での発表、会議での提案等幅広い場面で求められる、人を動かす力。他者の共感や賛同を得て、行動を促すために不可欠なコミュニケーション能力です。
-                    </p>
-                </div>
+                <details class="skill-card animate-on-scroll" open>
+                    <summary>
+                        <div class="skill-number">6</div>
+                        <h4 class="skill-title">プレゼンテーション能力</h4>
+                    </summary>
+                    <div class="details-content">
+                        <p class="skill-subtitle">【効果的な発信力と影響力】</p>
+                        <p class="skill-description">
+                            授業での発表、会議での提案等幅広い場面で求められる、人を動かす力。他者の共感や賛同を得て、行動を促すために不可欠なコミュニケーション能力です。
+                        </p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>
@@ -1318,6 +1503,33 @@
     </div>
 
     <script>
+        // --- アコーディオン(details)のレスポンシブ制御 ---
+        // スマホ(<=768px)では閉じ、PCでは開くための初期設定
+        function initDetails() {
+            const allDetails = document.querySelectorAll('details');
+            const isMobile = window.innerWidth <= 768;
+            
+            allDetails.forEach(detail => {
+                if (isMobile) {
+                    detail.removeAttribute('open'); // スマホなら閉じる
+                } else {
+                    detail.setAttribute('open', ''); // PCなら開く
+                }
+            });
+        }
+
+        // 初期化実行
+        initDetails();
+
+        // 画面リサイズ時にも再判定する（横持ちなどに対応）
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(initDetails, 200);
+        });
+
+        // --- 以下既存スクリプト ---
+
         // ハンバーガーメニューの開閉処理
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
