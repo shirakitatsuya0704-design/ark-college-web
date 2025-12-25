@@ -116,7 +116,7 @@
             cursor: pointer;
             z-index: 1002;
             width: 30px;
-            height: 18px;
+            height: 24px;
             justify-content: space-between;
         }
 
@@ -176,7 +176,7 @@
         }
 
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4.0rem;
             color: var(--white);
             margin-bottom: 2rem;
             line-height: 1.2;
@@ -184,14 +184,14 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 1rem;
             font-weight: 500;
         }
 
         .hero-description {
-            font-size: 1.05rem;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.75);
             max-width: 900px;
             margin: 0 auto 3rem;
@@ -322,8 +322,8 @@
         .crisis-content { max-width: 900px; margin: 0 auto; text-align: center; }
         
         .crisis h2 { 
-            font-size: 1.5rem; 
-            margin-bottom: 1.5rem; 
+            font-size: 1.6rem; 
+            margin-bottom: 1.6rem; 
             color: var(--navy); 
             line-height: 1.5; 
         }
@@ -702,7 +702,10 @@
             .sp-br { display: block; }
             .container { padding: 0 1.25rem; }
             
-            /* Nav */
+            /* Nav (Updated) */
+            nav { padding: 0.5rem 0; }
+            .logo-image { height: 40px; width: auto; }
+            
             .hamburger { display: flex; }
             .nav-links {
                 position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
@@ -712,8 +715,10 @@
             }
             .nav-links.active { right: 0; }
             
-            /* Hero */
+            /* Hero (Updated) */
+            .hero { padding-top: 60px; min-height: auto; padding-bottom: 3rem; }
             .hero h1 { font-size: 2.2rem; }
+            
             /* 実績：横一列に修正 */
             .achievements {
                 flex-direction: row;
@@ -787,7 +792,7 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABmGSURBVHgB7d0JeFTV+Qfw703IwhZCWMKSsO+gsgVkEVBBQEFAUbEqiktbrda9Vq1LrVr3rbXW2lqrVq22iksFBRQVEBBZBNn3LYEQIBB2ss7/d+YOk8lkJvd95965d5Lv53nOM5PIzL13bu7vnvu7v3POdRAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZGV1ASQjT0S/SxuqPwbFwC/HwD/ceAvjoBfkXyv8hCcLA5fIv5uXQD8Th0AxSXArxLq1gNQ7z8FdRoAqJcCfkPx39VHARTVQwGUlAKonAqg4j9B+O96/xrg1z0FoCQVr0XKePVR83PkdwT/rTT8bwT4DQAEq3CtvBr42Y/C15cApODa2XUT/l0M/kr86/h/V32/Av9f7yS+JuL7FXUB1MuvVS+IiKKXik3JARQhTp4FUJwToLxBABr3A9DyPADNLgfQ7BoATQcBaDQGQMMJABqNBtBgHICGFwFoMBFA/fEANPy3IAWhKSjxQsHJzQPgrwDgPwEgMABAsA+AoisBBG4GUHktgOKrAJRcC8B/M4DSGwH4cO18uK5+3Fe+Av/u7wGQ1xFAbh8AeYMBFA4DUHQ1gKIxAEomACi5DkBwKoDyGQAqpwOomAbAfzOA0lsBBG4F4J8KIOgHgO9vAQC+PwMIrgYQLJoNIDgbQPAG/PuNAIJzAARvAhCYByCwAEBgIYCKRfh3fJ/yxQDKFwMoWw6gYimA8mUAypcDKF8BwLca184x/L2sA+BfCMC/CMBJ/L1sBlCwFsDB5QByV+JaqgFUjQUQmAigfByA8usBlE8AUD4eQGA8gMA1AIKTYY0TuM/8C3D/6X9B6DkC/N7kI/B7UrgZQNkmXKMdAIq2ACjdBqB8F4DAAQCV+wH49wPw58J6bj6sVx+3iVr4tykBdQ2uWRNco4bvQ21cQ18Dq+X/tM+rPAC/H0CZ/wi+x38M18t/Cv89fz+AkhO4dp74qn4V/v9OAyhOBVCUCutn4Pu/Gv/+U/HftQDkyPf4Cv4+Kvz/NoDKTvjvRr0ANOkPoMlQAE1GAGgxDkDL6wC0uwNA6+kAWs/G9+cBaDsP16o9gJbX4vv4b6BefQBN8W8tB+HnppUAlFwG69VNMfD7B3C/D/cIX7ve+N4QAM3HAmg+BkDzVFivZSqA1rjvtRwDoNVYAK0mAWh9LYB2t+J7dwFoNxv3tI6439XD93v1QQC+AbBGCW4XtZn11MuwXl18f1Adq3V3/H/P6wG0uARAmysAtP0ngI5XA2h7F4CO9wPoeA+u3TDcP/vguzfiO7i++D6vh++3xl+vGb5f6gto+1wCX3/cI+oeBJA7Au6I3wL8/gPQZhq+34Hb4En83dYHUDIKQN4EAAdnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAnhvHoBlrwBY+gaA90YDWPQQgPf/4PzxP6uf+/y1jy0Y+tH5Pxv++qCHFo7/+PbXBz3w/ph/Lfzx7a9e+3zN48uyHwPwdCcAWdcC+OBpAKfeQp3/AcCzAwCs+RDAx68C+PgVAOteArBmAYD1LwH4ZAHq8wsABPFzAB8COAD/fQiKFuCn+B4fvr8ewGYAW/E6AEugfAeAY/j/E/g+fz+JOk/j2n+K6+Wruh4/h68jwP23N37/AL5/WNR7DEDgGIAgfnAg" alt="ARK COLLEGE" class="logo-image">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAABmGSURBVHgB7d0JeFTV+Qfw703IwhZCWMKSsO+gsgVkEVBBQEFAUbEqiktbrda9Vq1LrVr3rbXW2lqrVq22iksFBRQVEBBZBNn3LYEQIBB2ss7/d+YOk8lkJvd95965d5Lv53nOM5PIzL13bu7vnvu7v3POdRAREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREZGV1ASQjT0S/SxuqPwbFwC/HwD/ceAvjoBfkXyv8hCcLA5fIv5uXQD8Th0AxSXArxLq1gNQ7z8FdRoAqJcCfkPx39VHARTVQwGUlAKonAqg4j9B+O96/xrg1z0FoCQVr0XKePVR83PkdwT/rTT8bwT4DQAEq3CtvBr42Y/C15cApODa2XUT/l0M/kr86/h/V32/Av9f7yS+JuL7FXUB1MuvVS+IiKKXik3JARQhTp4FUJwToLxBABr3A9DyPADNLgfQ7BoATQcBaDQGQMMJABqNBtBgHICGFwFoMBFA/fEANPy3IAWhKSjxQsHJzQPgrwDgPwEgMABAsA+AoisBBG4GUHktgOKrAJRcC8B/M4DSGwH4cO18uK5+3Fe+Av/u7wGQ1xFAbh8AeYMBFA4DUHQ1gKIxAEomACi5DkBwKoDyGQAqpwOomAbAfzOA0lsBBG4F4J8KIOgHgO9vAQC+PwMIrgYQLJoNIDgbQPAG/PuNAIJzAARvAhCYByCwAEBgIYCKRfh3fJ/yxQDKFwMoWw6gYimA8mUAypcDKF8BwLca184x/L2sA+BfCMC/CMBJ/L1sBlCwFsDB5QByV+JaqgFUjQUQmAigfByA8usBlE8AUD4eQGA8gMA1AIKTYY0TuM/8C3D/6X9B6DkC/N7kI/B7UrgZQNkmXKMdAIq2ACjdBqB8F4DAAQCV+wH49wPw58J6bj6sVx+3iVr4tykBdQ2u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" alt="ARK COLLEGE" class="logo-image">
             </a>
             
             <div class="hamburger">
@@ -811,7 +816,7 @@
         <div class="hero-content">
             <div class="hero-tag">PROFESSIONAL ADMISSIONS CONSULTING</div>
             <h1><span class="ib">1学年6名限定。</span><br class="pc-br"><span class="ib">戦略で難関大合格を。</span></h1>
-            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン</span><span class="ib">「Ark College」</span></p>
+            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン私塾</span><span class="ib">「Ark College」</span></p>
             <p class="hero-description">
                 <span class="ib">累計50名以上を指導し、</span><span class="ib">進学先確保率100%。</span><span class="ib">第一志望合格率70%超の実績を持つ</span><span class="ib">代表講師が、</span><span class="ib">パーソナライズされた</span><span class="ib">カリキュラムで直接指導。</span>
             </p>
@@ -840,8 +845,8 @@
             </div>
 
             <p class="achievement-note">
-                ※累計実績。過去の実績であり、将来の合格を保証するものではありません。<br>
-                一般入試や大手塾平均を大きく凌駕する実績（参考：文部科学省_2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
+                ※2024年度実績。受講生30名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。<br>
+                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
             </p>
 
             <p class="cta-note">
@@ -854,7 +859,7 @@
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
-                <h2>人生を変える受験は、<br>プロと走りませんか？</h2>
+                <h2>一生を左右する受験戦略は、<br>プロに任せませんか？</h2>
                 
                 <p>
                     総合型選抜は、単なる「作文コンクール」ではありません。<br class="pc-br">
@@ -978,7 +983,7 @@
 
             <div style="text-align: center; margin-top: 4rem;">
                 <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
-                    個別コンサルティングで<br>詳しく聞く
+                    個別コンサルティングで詳しく聞く
                 </a>
             </div>
         </div>
@@ -988,8 +993,8 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">LIFELONG SKILLS</div>
-                <h2 class="section-title">一生涯の武器となる、<br>6つのソフトスキル</h2>
-                <p class="section-description">Ark Collegeの総合型選抜対策で培う、<br>実社会でも通用する能力</p>
+                <h2 class="section-title">一生涯の武器となる、6つのソフトスキル</h2>
+                <p class="section-description">Ark Collegeの総合型選抜対策で培う、実社会でも通用する能力</p>
             </div>
 
             <div class="skills-grid">
@@ -1078,7 +1083,7 @@
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <div class="section-tag">METHODOLOGY</div>
-                <h2 class="section-title">「道を拓く人材」を育てる<br>Ark式メソッド</h2>
+                <h2 class="section-title">「道を開拓していくことができる人材」を育てる。<br>Ark式メソッド</h2>
             </div>
 
             <div class="curriculum-steps">
@@ -1132,8 +1137,8 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <div class="section-tag">COURSES</div>
-                <h2 class="section-title">コース体系</h2>
+                <div class="section-tag">COURSES & PRICING</div>
+                <h2 class="section-title">コース・料金体系</h2>
             </div>
 
             <div class="pricing-intro animate-on-scroll">
@@ -1144,15 +1149,19 @@
 
                 <div class="guarantees">
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">受験戦略<br>コンサルティング</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">添削回数<br>無制限</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">いつでも相談可<br>48時間以内返信</div>
                     </div>
                     <div class="guarantee-item">
+                        <div class="guarantee-icon">✓</div>
                         <div class="guarantee-text">定期的な<br>三者面談</div>
                     </div>
                 </div>
@@ -1161,7 +1170,7 @@
             <div class="courses">
                 <div class="course-section animate-on-scroll">
                     <div class="course-header">
-                        <h3>【高2生】<br>早期エリート育成コース</h3>
+                        <h3>【高2生】早期エリート育成コース（月額制）</h3>
                         <p>難関大合格を目指す意欲ある総合型選抜での合格を確実にしたい高校1年〜2年生のためのコース</p>
                         <div class="course-meta">
                             <div class="course-meta-item">
@@ -1201,7 +1210,7 @@
 
                 <div class="course-section animate-on-scroll">
                     <div class="course-header">
-                        <h3>【高3生】<br>合格完遂コース</h3>
+                        <h3>【高3生】合格完遂コース（パッケージ制）</h3>
                         <p>圧倒的な一次通過率と戦略的併願で、確実に合格を獲りに行く。</p>
                         <div class="course-meta">
                             <div class="course-meta-item">
@@ -1292,7 +1301,7 @@
                                     資料請求
                                 </a>
                                 <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" class="btn btn-primary" style="display: inline-block; min-width: 200px;">
-                                    個別コンサルに申し込む
+                                    個別コンサルティングに申し込む
                                 </a>
                             </div>
                         </div>
@@ -1395,7 +1404,7 @@
 
             <div class="profile-content animate-on-scroll">
                 <div class="profile-image">
-                    <img src="image (2) (1).png" alt="Noah M." style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="" alt="Noah M." style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="profile-info">
                     <h3 class="profile-name">Noah M.</h3>
@@ -1472,9 +1481,9 @@
                 <div class="section-tag">MATERIALS REQUEST</div>
                 <h2 class="section-title" style="margin-bottom: 2rem;">資料請求</h2>
                 <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 3rem; color: var(--navy);">
-                    Ark Collegeの資料をお送りします。<br>
+                    Ark Collegeの詳しい資料をお送りします。<br>
                     カリキュラム詳細、料金体系、合格実績など、<br>
-                    ご検討いただくための情報を網羅しています。<br>
+                    入塾をご検討いただくための情報を網羅しています。<br>
                     まずはお気軽に資料をご請求ください。
                 </p>
                 
