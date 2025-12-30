@@ -397,6 +397,62 @@
             text-align: left;
         }
 
+        /* 画像追加用のスタイル */
+        .mentor-image-wrapper {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        
+        .mentor-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(10, 22, 40, 0.15);
+        }
+        
+        .reason-image-wrapper {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .reason-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(10, 22, 40, 0.1);
+        }
+        
+        .skills-overview-image {
+            margin: 3rem auto;
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .skills-overview-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        
+        .guarantees-infographic {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .guarantees-infographic img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .voice-campus-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--gold);
+        }
+
         /* --- Value Proposition & Skills (Accordion Base Styles) --- */
         details { display: block; }
         details > summary {
@@ -602,6 +658,7 @@
             background: var(--off-white);
             padding: 2rem;
             border-radius: 4px;
+            text-align: center;
         }
         .voice-univ { color: var(--gold-dark); font-weight: 700; margin-bottom: 0.5rem; }
         .voice-msg { font-size: 0.95rem; line-height: 1.8; }
@@ -927,6 +984,11 @@
                         <strong>「どうしても合格したい」<br>方のための<br>プロフェッショナル・ファーム</strong>です。
                     </p>
                 </div>
+                
+                <!-- 修正1: プロによる伴走イメージの追加 -->
+                <div class="mentor-image-wrapper">
+                    <img src="mentor-guidance.jpg" alt="プロ講師による個別指導 - 受験生に寄り添う伴走サポート" width="900" height="600" loading="lazy" decoding="async">
+                </div>
             </div>
         </div>
     </section>
@@ -945,6 +1007,10 @@
                         <h3 class="prop-title">合格へと導く<br>「戦略コンサルティング」</h3>
                     </summary>
                     <div class="details-content">
+                        <!-- 修正2: REASON 01画像追加 -->
+                        <div class="reason-image-wrapper">
+                            <img src="strategy-planning.jpg" alt="受験戦略コンサルティング - 緻密な戦略立案" width="600" height="400" loading="lazy" decoding="async">
+                        </div>
                         <p class="prop-catch">生徒のポテンシャル × 志望校特性</p>
                         <div class="prop-body">
                             <p>
@@ -966,6 +1032,10 @@
                         <h3 class="prop-title">31校以上の実績に基づく<br>「完全個別カリキュラム」</h3>
                     </summary>
                     <div class="details-content">
+                        <!-- 修正2: REASON 02画像追加 -->
+                        <div class="reason-image-wrapper">
+                            <img src="personalized-curriculum.jpg" alt="完全個別カリキュラム - オーダーメイドの学習プラン" width="600" height="400" loading="lazy" decoding="async">
+                        </div>
                         <p class="prop-catch">バイト講師ゼロ。<br>代表講師があなただけの最適解を設計。</p>
                         <div class="prop-body">
                             <p>
@@ -992,6 +1062,10 @@
                         <h3 class="prop-title">添削・相談無制限。<br>いつでも相談できる安心感。</h3>
                     </summary>
                     <div class="details-content">
+                        <!-- 修正2: REASON 03画像追加 -->
+                        <div class="reason-image-wrapper">
+                            <img src="unlimited-support.jpg" alt="添削・相談無制限 - いつでも繋がる安心サポート" width="600" height="400" loading="lazy" decoding="async">
+                        </div>
                         <p class="prop-catch">悩みを翌週に持ち越さない。<br>24時間365日、あなたの味方です。</p>
                         <div class="prop-body">
                             <p>
@@ -1018,6 +1092,10 @@
                         <h3 class="prop-title">受験を超えて一生使える<br>「6つのソフトスキル」養成</h3>
                     </summary>
                     <div class="details-content">
+                        <!-- 修正2: REASON 04画像追加 -->
+                        <div class="reason-image-wrapper">
+                            <img src="soft-skills-development.jpg" alt="6つのソフトスキル養成 - 社会で活躍する知性を育む" width="600" height="400" loading="lazy" decoding="async">
+                        </div>
                         <p class="prop-catch">大学合格はゴールではない。<br>社会で活躍するための「知性」を育む。</p>
                         <div class="prop-body">
                             <p>
@@ -1045,6 +1123,11 @@
                 <div class="section-tag">LIFELONG SKILLS</div>
                 <h2 class="section-title">一生の武器となる、<br>6つのソフトスキル</h2>
                 <p class="section-description">Ark Collegeの総合型選抜対策で培う、<br>実社会でも通用する能力</p>
+            </div>
+
+            <!-- 修正3: 6つのソフトスキル全体像の画像追加 -->
+            <div class="skills-overview-image animate-on-scroll">
+                <img src="six-skills-overview.jpg" alt="6つのソフトスキル全体像 - 相互に関連する知性の体系" width="900" height="600" loading="lazy" decoding="async">
             </div>
 
             <div class="skills-grid">
@@ -1196,18 +1279,11 @@
                 <p>
                     Ark Collegeでは、コースによって「手厚さ」を変えることはありません。志望校の数と難易度に応じたパッケージのみをご用意しています。
                 </p>
-                <h4>
-                    1.受験戦略コンサルティング
-                </h4>
-                <h4>
-                    2.添削回数無制限
-                </h4>
-                <h4>
-                    3.いつでも相談可48時間以内返信
-                </h4>
-                <h4>
-                    4.定期的な三者面談
-                </h4>
+                
+                <!-- 修正4: コース共通ポイントをインフォグラフィック化 -->
+                <div class="guarantees-infographic">
+                    <img src="course-benefits-infographic.jpg" alt="コース共通サポート - 受験戦略・添削無制限・相談無制限・三者面談" width="1000" height="300" loading="lazy" decoding="async">
+                </div>
             </div>
 
             <div class="courses">
@@ -1299,18 +1375,24 @@
             </div>
             <div class="voice-grid animate-on-scroll">
                 <div class="voice-card">
+                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
+                    <img src="keio-campus.jpg" alt="慶應義塾大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">慶應義塾大学 法学部 合格</div>
                     <p class="voice-msg">
                         「先の指導のおかげで、自分の強みを最大限に活かした出願書類を作成できました。毎回のメンタリングで思考が深まり、面接でも自信を持って話せました。」
                     </p>
                 </div>
                 <div class="voice-card">
+                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
+                    <img src="sophia-campus.jpg" alt="上智大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">上智大学 総合グローバル学部 合格</div>
                     <p class="voice-msg">
                         「探究活動のテーマ設定から伴走していただき、独自性のある実績を作ることができました。深夜でも返信をいただける安心感が大きかったです。」
                     </p>
                 </div>
                 <div class="voice-card">
+                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
+                    <img src="rikkyo-campus.jpg" alt="立教大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">立教大学 経営学部 合格</div>
                     <p class="voice-msg">
                         「他の塾とは違い、画一的な指導ではなく私個人の個性に合わせた戦略を立ててくれました。一生使える思考力が身についたと感じています。」
