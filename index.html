@@ -918,15 +918,61 @@
             }
             .nav-links.active { right: 0; }
             
-            /* Hero Impact Mobile */
-            .hero-impact { padding-top: 100px; padding-bottom: 4rem; min-height: auto; }
-            .impact-container { grid-template-columns: 1fr; gap: 3rem; }
-            .impact-headline { font-size: 2.8rem; text-align: left; }
-            .stat-row { padding: 1.5rem; }
-            .stat-huge { font-size: 4rem; }
-            .cta-group { justify-content: flex-start; flex-direction: column; width: 100%; }
+            /* Hero Impact Mobile (Adjusted for fitting in one screen) */
+            .hero-impact { 
+                padding-top: 75px; 
+                padding-bottom: 2rem; 
+                min-height: auto; 
+            }
+            .impact-container { 
+                grid-template-columns: 1fr; 
+                gap: 1.5rem; 
+            }
+            .impact-headline { 
+                font-size: 2.2rem; 
+                margin-bottom: 1rem;
+                text-align: left; 
+            }
+            .impact-sub {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+            }
+            .cta-group { 
+                justify-content: flex-start; 
+                flex-direction: column; 
+                width: 100%; 
+                gap: 0.8rem;
+            }
             .btn { width: 100%; }
-            .limit-tag-box { margin-bottom: 1.5rem; }
+            .limit-tag-box { 
+                margin-bottom: 1rem; 
+                padding: 0.3rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            /* Stats Adjustments for Mobile (2 Columns) */
+            .impact-stats {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            .stat-row { 
+                padding: 1rem; 
+                align-items: center;
+                text-align: center;
+            }
+            .stat-huge { 
+                font-size: 2.8rem; 
+            }
+            .stat-label-box {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .stat-desc {
+                font-size: 0.7rem;
+                line-height: 1.2;
+            }
             
             /* Sections */
             section { padding: 4rem 0; }
