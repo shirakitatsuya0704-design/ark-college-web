@@ -204,8 +204,8 @@
             display: grid;
             /* 左右の比率調整 */
             grid-template-columns: 1.1fr 0.9fr; 
-            /* 画面幅に応じてギャップを調整（最小2rem, 最大4rem） */
-            gap: clamp(2rem, 4vw, 4rem);
+            /* 【変更】画面幅に応じてギャップを調整（少し詰めた） */
+            gap: clamp(1.5rem, 3vw, 3rem);
             align-items: center;
             position: relative;
             z-index: 2;
@@ -227,7 +227,8 @@
             padding: 0.4rem 1.2rem;
             font-size: 0.85rem;
             letter-spacing: 0.2em;
-            margin-bottom: 1.5rem; /* 余白削減 */
+            /* 【変更】余白削減 */
+            margin-bottom: 1rem;
             background: rgba(10, 22, 40, 0.8);
             backdrop-filter: blur(5px);
             align-self: flex-start;
@@ -241,7 +242,8 @@
             font-weight: 900;
             line-height: 1.15; /* 行間を少し詰める */
             color: var(--white);
-            margin-bottom: 1.5rem; /* 余白削減 */
+            /* 【変更】余白削減 */
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
         }
 
@@ -259,7 +261,8 @@
             font-size: 1rem;
             color: rgba(255,255,255,0.8);
             line-height: 1.7;
-            margin-bottom: 2rem; /* 余白削減 */
+            /* 【変更】余白削減 */
+            margin-bottom: 1.5rem;
             border-left: 3px solid var(--gold);
             padding-left: 1.2rem;
         }
@@ -268,7 +271,8 @@
         .impact-stats {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* パネル間の隙間を削減 */
+            /* 【変更】パネル間の隙間を削減 */
+            gap: 1rem;
             position: relative;
         }
 
@@ -389,7 +393,8 @@
 
         /* --- Section Styles --- */
         section {
-            padding: 8rem 0;
+            /* 【変更】セクション全体の上下余白を削減 */
+            padding: 5rem 0;
             position: relative;
         }
 
@@ -401,7 +406,8 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 5rem;
+            /* 【変更】セクション見出し下の余白を削減 */
+            margin-bottom: 3rem;
         }
 
         .section-tag {
@@ -461,7 +467,8 @@
 
         /* 画像追加用のスタイル */
         .mentor-image-wrapper {
-            margin-top: 4rem;
+            /* 【変更】余白削減 */
+            margin-top: 3rem;
             text-align: center;
         }
         
@@ -485,7 +492,8 @@
         }
         
         .skills-overview-image {
-            margin: 3rem auto;
+            /* 【変更】余白削減 */
+            margin: 2rem auto 3rem;
             text-align: center;
             max-width: 900px;
         }
@@ -529,8 +537,9 @@
         .props-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            /* 【変更】余白削減 */
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
         .prop-card {
             padding: 3rem;
@@ -570,8 +579,9 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            /* 【変更】余白削減 */
             gap: 1.5rem;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
         .skill-card {
             background: var(--white);
@@ -599,11 +609,13 @@
 
         /* --- Curriculum Section --- */
         .curriculum { background: var(--white); }
-        .curriculum-steps { margin-top: 3rem; }
+        /* 【変更】余白削減 */
+        .curriculum-steps { margin-top: 2rem; }
         .step {
             display: flex;
             gap: 2rem;
-            margin-bottom: 3rem;
+            /* 【変更】余白削減 */
+            margin-bottom: 2rem;
             align-items: start;
         }
         .step-number {
@@ -626,8 +638,9 @@
         .pricing { background: var(--off-white); }
         .pricing-intro {
             max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 2.5rem;
+            /* 【変更】余白削減 */
+            margin: 0 auto 2rem;
+            padding: 2rem;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: var(--white);
             position: relative;
@@ -650,7 +663,8 @@
         .guarantee-icon { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--gold); }
         .guarantee-text { font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
 
-        .course-section { margin-bottom: 3rem; }
+        /* 【変更】余白削減 */
+        .course-section { margin-bottom: 2rem; }
         .course-header {
             background: var(--navy);
             color: var(--white);
@@ -731,10 +745,12 @@
         .selection-message {
             background: var(--off-white);
             padding: 3rem;
-            margin-bottom: 3rem;
+            /* 【変更】余白削減 */
+            margin-bottom: 2rem;
             border-left: 4px solid var(--gold);
         }
-        .criteria { display: grid; gap: 2rem; margin: 3rem 0; }
+        /* 【変更】余白削減 */
+        .criteria { display: grid; gap: 2rem; margin: 2rem 0; }
         .criteria-item {
             display: flex; align-items: center; gap: 2rem;
             padding: 2rem; background: var(--white); border: 2px solid var(--gold);
@@ -750,7 +766,9 @@
         
         .process-flow {
             display: flex; justify-content: space-between; align-items: center;
-            margin-top: 4rem; flex-wrap: wrap; gap: 2rem;
+            /* 【変更】余白削減 */
+            margin-top: 3rem;
+            flex-wrap: wrap; gap: 2rem;
         }
         .process-step {
             flex: 1; min-width: 200px; text-align: center;
@@ -771,7 +789,8 @@
 
         /* --- Profile --- */
         .profile { background: var(--off-white); }
-        .profile-content { display: flex; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+        /* 【変更】余白削減 */
+        .profile-content { display: flex; gap: 3rem; max-width: 1200px; margin: 0 auto; align-items: start; }
         .profile-image {
             flex-shrink: 0; width: 300px; height: 350px;
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
@@ -794,7 +813,8 @@
         .final-cta {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: var(--white);
-            padding: 4rem 2rem;
+            /* 【変更】余白削減 */
+            padding: 3rem 2rem;
             text-align: center;
         }
         .final-cta h2 { font-size: 2rem; color: var(--gold); margin-bottom: 2rem; font-weight: 900; }
@@ -924,7 +944,8 @@
             .limit-tag-box { margin-bottom: 1.5rem; }
             
             /* Sections */
-            section { padding: 4rem 0; }
+            /* 【変更】セクション全体の上下余白を削減 */
+            section { padding: 3rem 0; }
             .section-title { font-size: 1.7rem; line-height: 1.4; } 
             
             /* 修正: SP版での余白調整 */
@@ -989,7 +1010,8 @@
                 height: 100dvh; 
                 min-height: 650px; /* iPhone SEなど小さすぎる端末用 */
                 padding-top: 70px; /* Navバーの高さ */
-                padding-bottom: 1.5rem; /* 下部の余白 */
+                /* 【変更】下部余白削減 */
+                padding-bottom: 1rem;
                 align-items: flex-start; /* コンテンツを上から詰める */
             }
 
@@ -999,7 +1021,8 @@
                 justify-content: space-between; /* メッセージを上、数字を下に配置 */
                 height: 100%;
                 padding: 1rem 1.5rem 0; /* 横幅の余白調整 */
-                gap: 1rem;
+                /* 【変更】余白削減 */
+                gap: 0.8rem;
             }
 
             /* 上部：メッセージエリア */
@@ -1019,13 +1042,15 @@
             .impact-headline {
                 font-size: 2.4rem; /* 画面からはみ出さないサイズに調整 */
                 line-height: 1.2;
-                margin-bottom: 1rem;
+                /* 【変更】余白削減 */
+                margin-bottom: 0.8rem;
             }
 
             .impact-sub {
                 font-size: 0.85rem; /* 少し小さく */
                 line-height: 1.6;
-                margin-bottom: 1.5rem;
+                /* 【変更】余白削減 */
+                margin-bottom: 1rem;
                 border-left-width: 2px;
                 padding-left: 1rem;
             }
