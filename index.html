@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW11SJHE3R"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,9 +8,7 @@
       gtag('js', new Date());
       gtag('config', 'G-JW11SJHE3R');
     </script>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KG4524NR');</script>
-    <!-- End Google Tag Manager -->
     <meta name="google-site-verification" content="u47lvMsh4p_ffNeFHHbMcCsOVvfJrLHtr_49qHakm3M" />
     <meta name="google-site-verification" content="jKGmIfTKSXhrjhTYKfq7zMJLs6aInizKWEYEhvLqWwU" />
     <meta charset="UTF-8">
@@ -20,14 +17,14 @@
     <link rel="icon" href="logo.webp" sizes="192x192">
     <link rel="apple-touch-icon" href="logo.webp">
     <meta name="description" content="総合型選抜（旧AO入試）専門の完全オンライン塾Ark College。慶應・上智など難関大への高い合格実績。1学年6名限定の個別指導で、プロ講師が戦略的に合格へ導きます。全国どこからでも受講可能。">
-    
+     
     <meta property="og:title" content="Ark College | 総合型選抜専門の完全オンライン塾">
     <meta property="og:description" content="1学年6名限定。戦略で難関大合格を。進学先確保率100%の実績を持つプロフェッショナル・ファーム。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ark-college.com"> <meta property="og:image" content="ogp-image.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
+     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -173,118 +170,160 @@
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        /* --- Hero Section --- */
-        /* --- パターンA：戦略会議・コンサルティングのイメージ --- */
-        .hero {
-            /* 元の設定を維持 */
+        /* =========================================
+           ここから下が新しいFV（インパクト版）のCSSです
+           ========================================= */
+        
+        /* --- Hero Section (Impact Ver.) --- */
+        .hero-impact {
             min-height: 100vh;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 80px;
-        
-            /* ▼ ここを変更：背景画像設定 ▼ */
+            padding-top: 80px; /* Navの高さ分 */
+            /* 高級感のあるダークネイビー背景（CSSのみでグリッドと光を表現） */
+            background-color: #050b14;
             background-image: 
-                linear-gradient(rgba(10, 22, 40, 0.85), rgba(10, 22, 40, 0.9)), /* 文字を読みやすくする強力なネイビーのカバー */
-                url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop'); /* 会議・戦略イメージ */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+                radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 25%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px; /* グリッドサイズ */
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            max-width: 1200px;
+        .impact-container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
             padding: 0 2rem;
-            animation: fadeInUp 1s ease-out 0.3s both;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* 左:メッセージ 右:数字 */
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
-        .hero-tag {
+        /* 左側：メッセージエリア */
+        .impact-copy {
+            text-align: left;
+        }
+
+        .limit-tag-box {
+            display: inline-block;
+            border: 1px solid var(--gold);
             color: var(--gold);
+            padding: 0.5rem 1.5rem;
             font-size: 0.9rem;
             letter-spacing: 0.2em;
-            font-weight: 600;
             margin-bottom: 2rem;
-            text-transform: uppercase;
+            background: rgba(10, 22, 40, 0.8);
+            backdrop-filter: blur(5px);
         }
 
-        .hero h1 {
-            font-size: 3.8rem;
+        .impact-headline {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.2;
             color: var(--white);
             margin-bottom: 2rem;
-            line-height: 1.2;
-            font-weight: 900;
+            letter-spacing: -0.02em;
         }
 
-        .hero-subtitle {
-            font-size: 1.0rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 1rem;
-            font-weight: 500;
+        /* 黄金の文字演出 */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
         }
 
-        .hero-description {
-            font-size: 1.0rem;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            line-height: 1.9;
+        .impact-sub {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            border-left: 3px solid var(--gold);
+            padding-left: 1.5rem;
         }
 
-        /* 実績ブロック */
-        .achievements {
+        /* 右側：数字（実績）エリア */
+        .impact-stats {
             display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        /* 巨大な数字のデザイン */
+        .stat-row {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 4rem;
-            margin: 3rem 0 4rem;
-            flex-wrap: wrap;
         }
 
-        .achievement-item { text-align: center; }
-        .achievement-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-        .achievement-value {
-            font-size: 2.5rem;
-            color: var(--gold);
-            font-weight: 700;
+        .stat-row:hover {
+            transform: translateX(-10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .stat-huge {
             font-family: 'Playfair Display', serif;
-        }
-        .achievement-label {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .achievement-note {
-            font-size: 0.6rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            font-size: 6rem; /* 超巨大サイズ */
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+            /* メタリックゴールドの質感 */
+            background: linear-gradient(to bottom, #FCF6BA, #BF953F, #B38728, #FBF5B7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
 
-        /* CTA Buttons */
+        .stat-label-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+        }
+
+        .stat-label {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+        }
+
+        .stat-desc {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* --- ここまでが新しいFVのCSS --- */
+
+        /* CTA Buttons (Shared) */
         .cta-group {
             display: flex;
             gap: 1.5rem;
-            justify-content: center;
+            justify-content: flex-start; /* 左寄せに変更 */
             flex-wrap: wrap;
         }
 
@@ -801,6 +840,10 @@
             .props-grid { grid-template-columns: 1fr; }
             .profile-content { flex-direction: column; padding: 0 1rem; }
             .profile-image { width: 100%; max-width: 300px; margin: 0 auto; }
+            
+            /* Impact Hero Tablet */
+            .impact-headline { font-size: 3.5rem; }
+            .stat-huge { font-size: 5rem; }
         }
 
         @media (max-width: 768px) {
@@ -822,23 +865,15 @@
             }
             .nav-links.active { right: 0; }
             
-            /* Hero (Updated) */
-            .hero { padding-top: 60px; min-height: auto; padding-bottom: 3rem; }
-            .hero h1 { font-size: 2.2rem; }
-            
-            /* 実績：横一列に修正 */
-            .achievements {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                gap: 0.5rem;
-            }
-            .achievement-item { flex: 1; min-width: 0; padding: 0; }
-            .achievement-value { font-size: 1.5rem; margin-bottom: 0; }
-            .achievement-label { font-size: 0.65rem; line-height: 1.2; }
-
-            .cta-group { flex-direction: column; width: 100%; }
+            /* Hero Impact Mobile */
+            .hero-impact { padding-top: 100px; padding-bottom: 4rem; min-height: auto; }
+            .impact-container { grid-template-columns: 1fr; gap: 3rem; }
+            .impact-headline { font-size: 2.8rem; text-align: left; }
+            .stat-row { padding: 1.5rem; }
+            .stat-huge { font-size: 4rem; }
+            .cta-group { justify-content: flex-start; flex-direction: column; width: 100%; }
             .btn { width: 100%; }
+            .limit-tag-box { margin-bottom: 1.5rem; }
             
             /* Sections */
             section { padding: 4rem 0; }
@@ -901,9 +936,7 @@
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG4524NR"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <nav>
         <div class="container">
             <a href="#" class="logo">
@@ -927,50 +960,65 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-tag">ARK COLLEGE</div>
-            <h1><span class="ib">1学年6名限定。</span><br class="pc-br"><span class="ib">難関大合格を、<br>戦略で。</span></h1>
-            <p class="hero-subtitle"><span class="ib">総合型選抜専門・完全オンライン塾</span></p>
-            <p class="hero-description">
-                <span class="ib">累計50名以上を指導し、</span><span class="ib">第一志望合格率85%超の実績を持つ</span><span class="ib">代表講師が、</span><span class="ib">パーソナライズされた</span><span class="ib">カリキュラムで直接指導。</span>
-            </p>
-            
-            <div class="achievements">
-                <div class="achievement-item">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">100%</div>
-                    <div class="achievement-label">第一志望 一次通過率</div>
+    <section class="hero-impact">
+        <div class="impact-container">
+            <div class="impact-copy">
+                <div class="limit-tag-box">1学年6名限定</div>
+                
+                <h1 class="impact-headline">
+                    難関大合格を、<br>
+                    <span class="text-gold-gradient">戦略</span>で。
+                </h1>
+                
+                <p class="impact-sub">
+                    累計50名以上を指導し、第一志望合格率85%超。<br class="pc-br">
+                    私たちは「どうしても合格したい」方のための<br class="pc-br">
+                    戦略的プロフェッショナル・ファームです。
+                </p>
+
+                <div class="cta-group">
+                    <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" class="btn btn-primary" target="_blank" rel="noopener">
+                        個別コンサルティングに申込む
+                    </a>
+                    <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" class="btn btn-secondary" target="_blank" rel="noopener">
+                        資料請求
+                    </a>
                 </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">🏆</div>
-                    <div class="achievement-value">86.7%</div>
-                    <div class="achievement-label">第一志望 最終合格率</div>
-                </div>
-                <div class="achievement-item">
-                    <div class="achievement-icon">📊</div>
-                    <div class="achievement-value">50+</div>
-                    <div class="achievement-label">指導実績人数</div>
-                </div>
+                
+                <p class="cta-note" style="text-align: left; margin-top: 1rem;">
+                    ※所要時間：約30分 / 入塾審査を含みます
+                </p>
             </div>
 
-            <div class="cta-group">
-                <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" class="btn btn-primary" target="_blank" rel="noopener">個別コンサルティングに<br>申し込む<br><span style="font-size:0.8em; font-weight:normal;">(所要時間：約30分)</span></a>
-                <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" class="btn btn-secondary" id="materials" target="_blank" rel="noopener">資料請求</a>
+            <div class="impact-stats">
+                <div class="stat-row">
+                    <div class="stat-huge">
+                        <span class="count-up" data-target="100">0</span><span style="font-size: 0.5em;">%</span>
+                    </div>
+                    <div class="stat-label-box">
+                        <div class="achievement-icon">🏆</div>
+                        <div>
+                            <div class="stat-label">第一志望 一次通過率</div>
+                            <div class="stat-desc">書類選考における圧倒的な強さ</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-huge">
+                        <span class="count-up" data-target="86.7">0</span><span style="font-size: 0.5em;">%</span>
+                    </div>
+                    <div class="stat-label-box">
+                        <div class="achievement-icon">✨</div>
+                        <div>
+                            <div class="stat-label">第一志望 最終合格率</div>
+                            <div class="stat-desc">一般入試の平均を大きく凌駕する実績</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <p class="achievement-note">
-                ※累計実績。受講50名以上の集計結果です。過去の実績であり、将来の合格を保証するものではありません。    
-                一般入試や大手塾平均を大きく凌駕する実績（参考：2024年度大学種別合格率 国立大学：約33.9％　公立大学：約34.4％　私立大学：約57.4％）
-            </p>
-
-            <p class="cta-note">
-                ※個別コンサルティングには、入塾面談も含まれます<br>
-                ※定員に達し次第、本年度の募集は終了します
-            </p>
         </div>
     </section>
-
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
@@ -994,7 +1042,6 @@
                     </p>
                 </div>
                 
-                <!-- 修正1: プロによる伴走イメージの追加 -->
                 <div class="mentor-image-wrapper">
                     <img src="menter.guidance.webp" alt="プロ講師による個別指導 - 受験生に寄り添う伴走サポート" width="900" height="600" loading="lazy" decoding="async">
                 </div>
@@ -1016,7 +1063,6 @@
                         <h3 class="prop-title">合格へと導く<br>「戦略コンサルティング」</h3>
                     </summary>
                     <div class="details-content">
-                        <!-- 修正2: REASON 01画像追加 -->
                         <div class="reason-image-wrapper">
                             <img src="strategic.consulting.webp" alt="受験戦略コンサルティング - 緻密な戦略立案" width="525" height="350" loading="lazy" decoding="async">
                         </div>
@@ -1041,7 +1087,6 @@
                         <h3 class="prop-title">31校以上の実績に基づく<br>「完全個別カリキュラム」</h3>
                     </summary>
                     <div class="details-content">
-                        <!-- 修正2: REASON 02画像追加 -->
                         <div class="reason-image-wrapper">
                             <img src="ordermade.webp" alt="完全個別カリキュラム - オーダーメイドの学習プラン" width="525" height="350" loading="lazy" decoding="async">
                         </div>
@@ -1071,7 +1116,6 @@
                         <h3 class="prop-title">添削・相談無制限。<br>いつでも相談できる安心感。</h3>
                     </summary>
                     <div class="details-content">
-                        <!-- 修正2: REASON 03画像追加 -->
                         <div class="reason-image-wrapper">
                             <img src="24hours.webp" alt="添削・相談無制限 - いつでも繋がる安心サポート" width="525" height="350" loading="lazy" decoding="async">
                         </div>
@@ -1101,7 +1145,6 @@
                         <h3 class="prop-title">受験を超えて一生使える<br>「6つのソフトスキル」養成</h3>
                     </summary>
                     <div class="details-content">
-                        <!-- 修正2: REASON 04画像追加 -->
                         <div class="reason-image-wrapper">
                             <img src="6points.webp" alt="6つのソフトスキル養成 - 社会で活躍する知性を育む" width="525" height="350" loading="lazy" decoding="async">
                         </div>
@@ -1134,7 +1177,6 @@
                 <p class="section-description">Ark Collegeの総合型選抜対策で培う、<br>実社会でも通用する能力</p>
             </div>
 
-            <!-- 修正3: 6つのソフトスキル全体像の画像追加 -->
             <div class="skills-overview-image animate-on-scroll">
                 <img src="6points.webp" alt="6つのソフトスキル全体像 - 相互に関連する知性の体系" width="900" height="600" loading="lazy" decoding="async">
             </div>
@@ -1286,7 +1328,6 @@
             <div class="pricing-intro animate-on-scroll">
                 <h3>全てのコースに、最高水準の<br>サポートを標準装備しています。</h3>
                 
-                <!-- 修正4: コース共通ポイントをインフォグラフィック化 -->
                 <div class="guarantees-infographic">
                     <img src="four_points.webp" alt="コース共通サポート - 受験戦略・添削無制限・相談無制限・三者面談" width="1000" height="300" loading="lazy" decoding="async">
                 </div>
@@ -1317,7 +1358,7 @@
                          <p>
                             コースによってサポート内容は異なります。<br>
                             詳しくは無料コンサルティングにてご提案いたします。
-                        </p>               
+                        </p>                
                     </div>
                 </div>
 
@@ -1345,7 +1386,7 @@
                         <p>
                             コースによってサポート内容は異なります。<br>
                             詳しくは無料コンサルティングにてご提案いたします。
-                        </p>                               
+                        </p>                                
 
                         <p class="pricing-note">
                             ※価格詳細は資料請求下さい。最適なプランは無料コンサルティングでご提案します。<br>
@@ -1372,7 +1413,7 @@
             </div>
         </div>
     </section>
-    
+     
     <section class="voice" id="voice">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1381,7 +1422,6 @@
             </div>
             <div class="voice-grid animate-on-scroll">
                 <div class="voice-card">
-                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
                     <img src="keio.webp" alt="慶應義塾大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">慶應義塾大学 法学部 合格</div>
                     <p class="voice-msg">
@@ -1389,7 +1429,6 @@
                     </p>
                 </div>
                 <div class="voice-card">
-                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
                     <img src="jochi.webp" alt="上智大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">上智大学 総合グローバル学部 合格</div>
                     <p class="voice-msg">
@@ -1397,7 +1436,6 @@
                     </p>
                 </div>
                 <div class="voice-card">
-                    <!-- 修正5: 合格者の声にキャンパス写真追加 -->
                     <img src="rikyo.webp" alt="立教大学キャンパス" class="voice-campus-image" width="80" height="80" loading="lazy" decoding="async">
                     <div class="voice-univ">立教大学 経営学部 合格</div>
                     <p class="voice-msg">
@@ -1477,9 +1515,9 @@
                 <div class="profile-info">
                     <h3 class="profile-name">Noah M.</h3>
                     <p class="profile-title">Ark College 代表講師</p>
-                    
+                     
                     <p class="profile-tagline">難関大合格実績を多数持つ、<br>総合型選抜指導のエキスパート</p>
-                    
+                     
                     <div class="profile-bio">
                         <p>
                             慶應義塾大学法学部法律学科卒。
@@ -1554,7 +1592,7 @@
                     入塾を検討いただける情報を網羅しています。<br>
                     まずはお気軽に資料をご請求ください。
                 </p>
-                
+                 
                 <div style="background: var(--white); padding: 3rem; border: 2px solid var(--gold); margin-bottom: 2rem;">
                     <p style="font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 2rem;">
                         以下のフォームから<br>ご請求ください
@@ -1693,6 +1731,57 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(initDetails, 200);
+        });
+
+        // ============================================
+        //  ここから下が新しいFV（インパクト版）のJSです
+        // ============================================
+        
+        // 数字のカウントアップアニメーション
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.count-up');
+            const speed = 2000; // アニメーション時間(ミリ秒)
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        
+                        // 小数点があるかどうかの判定
+                        const isFloat = target % 1 !== 0;
+                        const increment = target / (speed / 16); // 60fps想定
+
+                        if (count < target) {
+                            if(isFloat) {
+                                counter.innerText = (count + increment).toFixed(1);
+                            } else {
+                                counter.innerText = Math.ceil(count + increment);
+                            }
+                            setTimeout(updateCount, 16);
+                        } else {
+                            counter.innerText = target; // 最終値をセット
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            // Intersection Observerで画面に入ったら発火
+            const observerOptions = { threshold: 0.5 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.disconnect(); // 一度だけ実行
+                    }
+                });
+            }, observerOptions);
+
+            const target = document.querySelector('.hero-impact');
+            if (target) {
+                observer.observe(target);
+            }
         });
     </script>
 </body>
