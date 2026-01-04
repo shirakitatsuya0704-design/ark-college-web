@@ -86,7 +86,73 @@
             line-height: 1.3;
             letter-spacing: 0.02em;
         }
+        /* --- Ticker Animation (無限スクロール) --- */
+        .ticker-wrapper {
+            background: var(--navy); /* 背景はネイビー */
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--gold); /* 下線にゴールドを入れて区切りを強調 */
+            overflow: hidden;
+            width: 100%;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 5;
+        }
 
+        .ticker-track {
+            display: flex;
+            width: fit-content;
+            /* 1セット分(50%)移動したら0%に戻ることで無限ループに見せる */
+            animation: tickerScroll 80s linear infinite; 
+        }
+        
+        /* ホバー時に一時停止させたい場合は以下のコメントアウトを外す */
+        /* .ticker-track:hover {
+            animation-play-state: paused;
+        }
+        */
+
+        .ticker-item {
+            color: rgba(255, 255, 255, 0.9); /* 文字色 */
+            font-family: 'Noto Serif JP', serif; /* 明朝体で高級感を出す */
+            font-size: 1rem;
+            white-space: nowrap;
+            padding-right: 3rem; /* 大学名ごとの間隔 */
+            position: relative;
+            font-weight: 500;
+        }
+
+        /* 大学名の間の区切り記号 */
+        .ticker-item::after {
+            content: '/';
+            color: var(--gold);
+            position: absolute;
+            right: 1.2rem;
+            font-family: sans-serif;
+            opacity: 0.7;
+        }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* 要素全体の半分（1セット分）動かす */
+        }
+
+        /* スマホ向け調整 */
+        @media (max-width: 768px) {
+            .ticker-wrapper {
+                padding: 0.8rem 0;
+            }
+            .ticker-item {
+                font-size: 0.9rem;
+                padding-right: 2rem;
+            }
+            .ticker-item::after {
+                right: 0.8rem;
+            }
+            /* スマホでは少し速く感じるかもしれないのでアニメーション時間を調整しても良い */
+             .ticker-track {
+                animation-duration: 60s; 
+            }
+        }
         /* --- Navigation --- */
         nav {
             position: fixed;
@@ -1141,6 +1207,73 @@
             </div>
         </div>
     </section>
+    <div class="ticker-wrapper">
+        <div class="ticker-track">
+            <div class="ticker-item">一橋大学</div>
+            <div class="ticker-item">お茶の水女子大学</div>
+            <div class="ticker-item">筑波大学</div>
+            <div class="ticker-item">横浜国立大学</div>
+            <div class="ticker-item">香川大学</div>
+            <div class="ticker-item">福島大学</div>
+            <div class="ticker-item">慶應義塾大学</div>
+            <div class="ticker-item">早稲田大学</div>
+            <div class="ticker-item">国際基督教大学 (ICU)</div>
+            <div class="ticker-item">上智大学</div>
+            <div class="ticker-item">明治大学</div>
+            <div class="ticker-item">青山学院大学</div>
+            <div class="ticker-item">立教大学</div>
+            <div class="ticker-item">同志社大学</div>
+            <div class="ticker-item">中央大学</div>
+            <div class="ticker-item">法政大学</div>
+            <div class="ticker-item">学習院大学</div>
+            <div class="ticker-item">関西学院大学</div>
+            <div class="ticker-item">立命館大学</div>
+            <div class="ticker-item">関西大学</div>
+            <div class="ticker-item">成蹊大学</div>
+            <div class="ticker-item">明治学院大学</div>
+            <div class="ticker-item">日本女子大学</div>
+            <div class="ticker-item">東洋大学</div>
+            <div class="ticker-item">近畿大学</div>
+            <div class="ticker-item">東京女子大学</div>
+            <div class="ticker-item">南山大学</div>
+            <div class="ticker-item">立命館アジア太平洋大学</div>
+            <div class="ticker-item">明星大学</div>
+            <div class="ticker-item">帝京大学</div>
+            <div class="ticker-item">城西大学</div>
+
+            <div class="ticker-item">一橋大学</div>
+            <div class="ticker-item">お茶の水女子大学</div>
+            <div class="ticker-item">筑波大学</div>
+            <div class="ticker-item">横浜国立大学</div>
+            <div class="ticker-item">香川大学</div>
+            <div class="ticker-item">福島大学</div>
+            <div class="ticker-item">慶應義塾大学</div>
+            <div class="ticker-item">早稲田大学</div>
+            <div class="ticker-item">国際基督教大学 (ICU)</div>
+            <div class="ticker-item">上智大学</div>
+            <div class="ticker-item">明治大学</div>
+            <div class="ticker-item">青山学院大学</div>
+            <div class="ticker-item">立教大学</div>
+            <div class="ticker-item">同志社大学</div>
+            <div class="ticker-item">中央大学</div>
+            <div class="ticker-item">法政大学</div>
+            <div class="ticker-item">学習院大学</div>
+            <div class="ticker-item">関西学院大学</div>
+            <div class="ticker-item">立命館大学</div>
+            <div class="ticker-item">関西大学</div>
+            <div class="ticker-item">成蹊大学</div>
+            <div class="ticker-item">明治学院大学</div>
+            <div class="ticker-item">日本女子大学</div>
+            <div class="ticker-item">東洋大学</div>
+            <div class="ticker-item">近畿大学</div>
+            <div class="ticker-item">東京女子大学</div>
+            <div class="ticker-item">南山大学</div>
+            <div class="ticker-item">立命館アジア太平洋大学</div>
+            <div class="ticker-item">明星大学</div>
+            <div class="ticker-item">帝京大学</div>
+            <div class="ticker-item">城西大学</div>
+        </div>
+    </div>
     <section class="crisis">
         <div class="container">
             <div class="crisis-content animate-on-scroll">
