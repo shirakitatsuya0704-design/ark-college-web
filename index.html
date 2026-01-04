@@ -327,52 +327,52 @@
         }
 
         /* 巨大な数字のデザイン */
+        /* 数字とテキストが入っているボックス全体の設定 */
         .stat-row {
+            /* 既存の設定 */
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             padding: 2rem;
             border-radius: 4px;
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease;
+            
+            /* ▼▼ ここから追加・修正 ▼▼ */
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            flex-direction: column; /* 縦並び */
+            justify-content: center; /* 垂直方向の中央 */
+            align-items: center;     /* 水平方向の中央（これを追加することで左右真ん中になります） */
+            text-align: center;      /* 内部テキストの中央揃え */
         }
 
-        .stat-row:hover {
-            transform: translateX(-10px);
-            border-color: rgba(212, 175, 55, 0.3);
-            background: rgba(212, 175, 55, 0.05);
-        }
-
+        /* 巨大な数字の設定 */
         .stat-huge {
             font-family: 'Playfair Display', serif;
-            font-size: 6rem; /* 超巨大サイズ */
+            font-size: 6rem;
             font-weight: 700;
             line-height: 1;
             letter-spacing: -0.05em;
             margin-bottom: 0.5rem;
-            /* メタリックゴールドの質感 */
             background: linear-gradient(to bottom, #FCF6BA, #BF953F, #B38728, #FBF5B7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+            
+            /* ▼▼ 念のため幅指定と中央揃えを明示 ▼▼ */
+            width: 100%;
+            text-align: center;
         }
 
-        /* 既存の .stat-label-box を上書き、または修正 */
+        /* 下の注釈エリアの設定 */
         .stat-label-box {
             display: flex;
-            align-items: center;
-            justify-content: center; /* 中央寄せを追加 */
-            gap: 1rem;
-            text-align: center; /* テキスト自体も中央揃えにする */
-            width: 100%; /* 幅を確保 */
-        }
-        
-        .achievement-icon {
-            font-size: 2rem;
+            flex-direction: column; /* アイコンを消したので縦並びでOK */
+            align-items: center;    /* 中央揃え */
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
         }
 
         .stat-label {
@@ -380,11 +380,14 @@
             font-size: 1.1rem;
             font-weight: 600;
             letter-spacing: 0.1em;
+            text-align: center; /* 中央揃え */
         }
 
         .stat-desc {
             font-size: 0.8rem;
             color: rgba(255,255,255,0.5);
+            text-align: center; /* 中央揃え */
+            line-height: 1.6;
         }
 
         /* --- ここまでが新しいFVのCSS --- */
