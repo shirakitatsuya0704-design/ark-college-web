@@ -17,14 +17,14 @@
     <link rel="icon" href="logo.webp" type="image/webp">
     <link rel="apple-touch-icon" href="logo.webp">
     <meta name="description" content="総合型選抜（旧AO入試）専門の完全オンライン塾Ark College。慶應・上智など難関大への高い合格実績。1学年6名限定の個別指導で、プロ講師が戦略的に合格へ導きます。全国どこからでも受講可能。">
-      
+       
     <meta property="og:title" content="Ark College | 総合型選抜専門の完全オンライン塾">
     <meta property="og:description" content="1学年6名限定。戦略で難関大合格を。進学先確保率100%の実績を持つプロフェッショナル・ファーム。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ark-college.com"> <meta property="og:image" content="ogp-image.jpg"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
-      
+       
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1219,6 +1219,96 @@
                 font-size: 0.9rem;
             }
         }
+        
+        /* --- Embedded Form Styles --- */
+        .material-form-box {
+            background: var(--white);
+            padding: 3rem;
+            border: 2px solid var(--gold);
+            margin-bottom: 2rem;
+            max-width: 700px; /* フォームの最大幅 */
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left; /* 内部のテキストは左揃え */
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .label-required {
+            background: var(--gold);
+            color: var(--navy);
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 2px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--gray-light);
+            background: #fdfdfd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .form-submit-btn {
+            width: 100%;
+            max-width: 300px;
+            /* 既存のbtn-primaryを継承しつつ調整 */
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-submit-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* スマホ向け調整 */
+        @media (max-width: 768px) {
+            .material-form-box {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1268,7 +1358,7 @@
                     <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" class="btn btn-primary" target="_blank" rel="noopener">
                         個別コンサルティングに<br>申込む
                     </a>
-                    <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <a href="#materials" class="btn btn-secondary">
                         資料請求
                     </a>
                 </div>
@@ -1787,7 +1877,6 @@
                             コースによってサポート内容は異なります。<br>
                             詳しくは無料コンサルティングにてご提案いたします。
                         </p>                                
-
                         <p class="pricing-note">
                             ※価格詳細は資料請求下さい。最適なプランは無料コンサルティングでご提案します。<br>
                             ※対象期間・志望校ラインはあくまで目安です。
@@ -1800,7 +1889,7 @@
                                 あなたの状況に合わせた<br>最適なプランをご提案いたします。
                             </p>
                             <div style="display: flex; gap: 1.0rem; justify-content: center; flex-wrap: wrap;">
-                                <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-block; min-width: 200px; color: #000 !important; border-color: var(--gold);">
+                                <a href="#materials" class="btn btn-secondary" style="display: inline-block; min-width: 200px; color: #000 !important; border-color: var(--gold);">
                                     資料請求
                                 </a>
                                 <a href="https://forms.gle/rbWA7wUD6Uw1dG76A" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-block; min-width: 200px;">
@@ -1968,9 +2057,9 @@
                 <div class="profile-info">
                     <h3 class="profile-name">Noah M.</h3>
                     <p class="profile-title">Ark College 代表講師</p>
-                     
+                      
                     <p class="profile-tagline">難関大合格実績を多数持つ、<br>総合型選抜指導のエキスパート</p>
-                     
+                      
                     <div class="profile-bio">
                         <p>
                             慶應義塾大学法学部法律学科卒。
@@ -2036,28 +2125,66 @@
 
     <section style="background: var(--off-white); padding: 6rem 0;" id="materials">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div class="section-tag">MATERIALS REQUEST</div>
-                <h2 class="section-title" style="margin-bottom: 2rem;">資料請求</h2>
-                <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 3rem; color: var(--navy);">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="section-tag" style="text-align: center;">MATERIALS REQUEST</div>
+                <h2 class="section-title" style="margin-bottom: 2rem; text-align: center;">資料請求</h2>
+                <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 3rem; color: var(--navy); text-align: center;">
                     Ark Collegeの詳しい資料をお送りします。<br>
                     カリキュラム詳細・料金・実績など、<br>
                     入塾を検討いただける情報を網羅しています。<br>
-                    まずはお気軽に資料をご請求ください。
+                    以下のフォームよりお気軽にご請求ください。
                 </p>
                   
-                <div style="background: var(--white); padding: 3rem; border: 2px solid var(--gold); margin-bottom: 2rem;">
-                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 2rem;">
-                        以下のフォームから<br>ご請求ください
-                    </p>
-                    <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" rel="noopener" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.3rem 3.5rem;">
-                        資料請求フォームへ
-                    </a>
-                </div>
+                <div class="material-form-box">
+                    <form action="https://formspree.io/f/mdakbvre" method="POST">
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="name">
+                                お名前 <span class="label-required">必須</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="例：山田 太郎" required>
+                        </div>
 
-                <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.7;">
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                メールアドレス <span class="label-required">必須</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="例：taro@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="grade">
+                                学年
+                            </label>
+                            <select id="grade" name="grade" class="form-select">
+                                <option value="" selected disabled>選択してください</option>
+                                <option value="高校3年生">高校3年生</option>
+                                <option value="高校2年生">高校2年生</option>
+                                <option value="高校1年生">高校1年生</option>
+                                <option value="既卒生">既卒生</option>
+                                <option value="保護者">保護者</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">
+                                ご質問・備考
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="ご不明点や相談したいことがあればご記入ください"></textarea>
+                        </div>
+
+                        <div class="form-submit-wrapper">
+                            <button type="submit" class="form-submit-btn">
+                                資料を請求する
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+                <p style="font-size: 0.95rem; color: var(--gray); line-height: 1.7; text-align: center;">
                     ※資料請求後、2営業日以内にメールにてお送りいたします。<br>
-                    ※資料請求は無料です。お気軽にお申し込みください。
+                    ※送信完了後、自動的に完了画面へ切り替わります。
                 </p>
             </div>
         </div>
@@ -2085,9 +2212,9 @@
                 <p>Ark Growth Partners（アーク・グロース・パートナーズ）</p>
                 <p><a href="https://www.ark-growth-partners.com/" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: underline;">運営会社サイトはこちら</a></p>
             </div>
-    
+     
             <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
-    
+     
             <p style="margin: 0;">
                 &copy; 2025 Ark Growth Parnters. All rights reserved. 
                 <span class="pc-br"> | </span><br class="sp-br">
@@ -2101,7 +2228,7 @@
             2026年度生募集中
             <span class="sticky-cta-urgency">残り枠数わずか</span>
         </div>
-        <a href="https://forms.gle/LYiQSgYcBKmNeH2t9" target="_blank" rel="noopener" class="sticky-cta-btn">まずは資料を請求する</a>
+        <a href="#materials" class="sticky-cta-btn">まずは資料を請求する</a>
     </div>
 
     <script>
