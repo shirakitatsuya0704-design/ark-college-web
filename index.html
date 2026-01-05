@@ -957,6 +957,98 @@
             from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        /* --- Media / Note Section --- */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .media-card {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--navy);
+            transition: all 0.4s ease;
+            height: 100%; /* 高さを揃える */
+            overflow: hidden;
+        }
+
+        .media-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(10, 22, 40, 0.1);
+            border-color: var(--gold);
+        }
+
+        .media-thumb {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .media-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .media-card:hover .media-thumb img {
+            transform: scale(1.1);
+        }
+
+        .media-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .media-date {
+            font-size: 0.8rem;
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.05em;
+        }
+
+        .media-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            /* 2行で省略する設定 */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .media-excerpt {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            /* 3行で省略 */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            margin-top: auto; /* 下部に固定 */
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+        }
 
         /* -----------------------
             Responsive Styles
@@ -1750,6 +1842,59 @@
                         「他の塾とは違い、画一的な指導ではなく私個人の個性に合わせた戦略を立ててくれました。一生使える思考力が身についたと感じています。」
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="media" id="media" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-tag">MEDIA & COLUMN</div>
+                <h2 class="section-title">公式note</h2>
+                <p class="section-description">
+                    総合型選抜の対策ノウハウや、<br class="sp-br">
+                    合格のための思考法を発信しています。
+                </p>
+            </div>
+
+            <div class="media-grid">
+                <a href="https://note.com/ark_college/n/nd4965fbe8d90" target="_blank" rel="noopener" class="media-card animate-on-scroll">
+                    <div class="media-thumb">
+                        <img src="https://assets.st-note.com/production/uploads/images/126639682/rectangle_large_type_2_a40590892225016e78000411d95e2f75.jpeg?fit=bounds&quality=85&width=1280" alt="記事サムネイル" loading="lazy">
+                    </div>
+                    <div class="media-body">
+                        <div class="media-date">2026.01.05</div>
+                        <h3 class="media-title">総合型選抜を「戦略」で突破することにこだわり抜いたアークカレッジのカリキュラム</h3>
+                        <span class="read-more">READ MORE &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="https://note.com/ark_college/n/ne06612120422" target="_blank" rel="noopener" class="media-card animate-on-scroll">
+                    <div class="media-thumb">
+                        <img src="https://assets.st-note.com/production/uploads/images/126388414/rectangle_large_type_2_5502c3c6f84918f67341904724a04a60.jpeg?fit=bounds&quality=85&width=1280" alt="記事サムネイル" loading="lazy">
+                    </div>
+                    <div class="media-body">
+                        <div class="media-date">2026.01.05</div>
+                        <h3 class="media-title">【代表インタビュー】大学合格は「ゴール」ではなく「通過点」。外資系マーケター兼プロ講師が語る、一生モノの思考力を鍛える「総合型選抜」の本質</h3>
+                        <span class="read-more">READ MORE &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="https://note.com/ark_college/n/na24bccb96069" target="_blank" rel="noopener" class="media-card animate-on-scroll">
+                    <div class="media-thumb">
+                        <img src="https://assets.st-note.com/production/uploads/images/118747493/rectangle_large_type_2_c1585805e267154238e8331505315570.jpeg?fit=bounds&quality=85&width=1280" alt="記事サムネイル" loading="lazy">
+                    </div>
+                    <div class="media-body">
+                        <div class="media-date">2026.01.05</div>
+                        <h3 class="media-title">【代表インタビュー】なぜ、アークカレッジは「1学年6名」しか引き受けないのか？ 合格の先を見据えるプロが「厳選」にこだわる真意</h3>
+                        <span class="read-more">READ MORE &rarr;</span>
+                    </div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://note.com/ark_college" target="_blank" rel="noopener" class="btn btn-secondary" style="color: var(--navy); border-color: var(--navy);">
+                    note一覧を見る
+                </a>
             </div>
         </div>
     </section>
